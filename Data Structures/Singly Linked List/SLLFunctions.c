@@ -108,18 +108,14 @@ int main()
         case 1:
             printf("Enter input data : ");
             scanf("%d", &data);
-
             head = insertAtBegin(head, data);
             break;
-
         case 2:
 
             break;
-
         case 3:
 
             break;
-
         case 4:
 
             break;
@@ -129,7 +125,6 @@ int main()
         case 6:
 
             break;
-
         case 7:
             if (head == NULL)
             {
