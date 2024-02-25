@@ -21,45 +21,156 @@ NODE createNode()
 //------ Adding a node in a SLL at the beginning ------
 NODE insertAtBegin(NODE head, int data)
 {
-    NODE beginNode = createNode();
-    beginNode->data = data;
-    beginNode->next = head;
-    head = beginNode;
-
-
+    NODE addNode = createNode();
+    addNode->data = data;
+    addNode->next = head;
+    head = addNode;
     return head;
 }
 
 //------ Adding a node in a SLL at the end -------
 NODE insertAtEnd(NODE head, int data)
 {
+    NODE addNode = createNode();
+    addNode->data = data;
 
+    if (head == NULL)
+    {
+        head = addNode;
+    }
+    else
+    {
+        NODE lastNode = head;
+        while (lastNode->next != NULL)
+        {
+            lastNode = lastNode->next;
+        }
+
+        lastNode->next = addNode;
+    }
     return head;
 }
 //------ Adding a node in a SLL at the specified position -------
-NODE insertAtPosition(NODE head, int data)
+NODE insertAtPosition(NODE head, int data, int position)
 {
+    // Position cannot be 0 or less than 0.
+    if (position <= 0)
+    {
+        printf("Please insert a position.\n\n");
+        return head;
+    }
+
+    NODE current = head;
+    NODE previous = NULL;
+    int count = 0;
+
+    // Loop to reach the position in the Linked List
+    for (count = 0; count < (position - 1); count++)
+    {
+        // Leave the loop if position is longer than the list.
+        if (current == NULL)
+        {
+            printf("Position does not exist, please try a lower value or print the list.\n\n");
+            return head;
+        }
+        if (current != NULL)
+        {
+            previous = current;
+            current = current->next;
+        }
+    }
+
+    NODE addNode = createNode();
+    addNode->data = data;
+
+    addNode->next = current;
+    previous->next = addNode;
 
     return head;
 }
 //------ Deleting a node in a SLL at the beginning ------
 NODE deleteAtBegin(NODE head)
 {
-
+    if (head == NULL)
+    {
+        printf("List is empty. Cannot delete elements.\n\n");
+        return NULL;
+    }
+    if (head -> next == NULL)
+    {
+        free (head);
+        return NULL;
+    }
+    else
+    {
+        NODE deleteNode = head;
+        head = head->next;
+        free(deleteNode);
+    }
     return head;
 }
 
 //------ Deleting a node in a SLL at the end -------
 NODE deleteAtEnd(NODE head)
 {
+    NODE previous = NULL;
+    NODE deleteNode = head;
 
+    if (deleteNode == NULL)
+    {
+        printf("List is empty. Cannot delete elements.\n\n");
+        return NULL;
+    }
+    if (deleteNode -> next == NULL)
+    {
+        free (deleteNode);
+        return NULL;
+    }
+
+    while (deleteNode -> next != NULL)
+    {
+        previous = deleteNode;
+        deleteNode = deleteNode -> next;
+    }
+    previous -> next = NULL;
+    free (deleteNode);
     return head;
 }
 
 //------ Deleting a node in a SLL at the specified position -------
 NODE deleteAtPosition(NODE head, int position)
 {
+    // Position cannot be 0 or less than 0.
+    if (position <= 0)
+    {
+        printf("Please insert a position.\n\n");
+        return head;
+    }
 
+    NODE current = head;
+    NODE previous = NULL;
+    int count = 0;
+
+    // Loop to reach the position in the Linked List
+    for (count = 0; count < (position - 1); count++)
+    {
+        // Leave the loop if position is longer than the list.
+        if (current == NULL)
+        {
+            printf("Position does not exist, please try a lower value or print the list.\n\n");
+            return head;
+        }
+        if (current != NULL)
+        {
+            previous = current;
+            current = current->next;
+        }
+    }
+
+    NODE deleteNode = current;
+    previous->next = current->next;
+
+    free(deleteNode);
     return head;
 }
 
@@ -73,7 +184,7 @@ void printSLL(NODE head)
         printf("%d --> ", printNode->data);
         printNode = printNode->next;
     }
-    printf("NULL\n");
+    printf("NULL\n\n");
 }
 
 //------- Singly Linked List Menu ------
@@ -96,6 +207,7 @@ int main()
     NODE head = NULL;
     int userChoice = 1;
     int data = 0;
+    int position = 0;
     while (userChoice)
     {
         printMenu();
@@ -108,28 +220,41 @@ int main()
         case 1:
             printf("Enter input data : ");
             scanf("%d", &data);
-
             head = insertAtBegin(head, data);
+            printf("\n");
             break;
-
         case 2:
-
+            printf("Enter input data : ");
+            scanf("%d", &data);
+            head = insertAtEnd(head, data);
+            printf("\n");
             break;
-
         case 3:
 
+            printf("Enter input data : ");
+            scanf("%d", &data);
+            printf("Enter position to insert data : ");
+            scanf("%d", &position);
+            if (position == 1)
+            {
+                head = insertAtBegin(head, data);
+            }
+            else
+            {
+                head = insertAtPosition(head, data, position);
+            }
+            printf("\n");
             break;
-
         case 4:
-
+            head = deleteAtBegin(head);
             break;
         case 5:
-
+            head = deleteAtEnd(head);
             break;
         case 6:
-
+            printf("Enter position to delete data : ");
+            head = deleteAtPosition(head, position);
             break;
-
         case 7:
             if (head == NULL)
             {
