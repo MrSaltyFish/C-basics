@@ -15,13 +15,50 @@ NODE createNode()
 {
     NODE temp = (NODE)malloc(sizeof(struct node));
     temp->data = 0;
-    temp -> prev = NULL;
+    temp->prev = NULL;
     temp->next = NULL;
     return temp;
 }
 
-//------
+//------ Adding a node in a DLL at the beginning ------
+NODE insertAtBeginDLL(NODE head, int data)
+{
 
+    return head;
+}
+
+//------ Adding a node in a DLL at the end -------
+NODE insertAtEndDLL(NODE head, int data)
+{
+
+    return head;
+}
+
+//------ Adding a node in a DLL at the specified position -------
+NODE insertAtPositionDLL(NODE head, int data, int position)
+{
+
+    return head;
+}
+
+//------ Deleting a node in a DLL at the beginning ------
+NODE deleteAtBeginDLL(NODE head)
+{
+
+    return head;
+}
+//------ Deleting a node in a DLL at the end -------
+NODE deleteAtEndDLL(NODE head)
+{
+
+    return head;
+}
+//------ Deleting a node in a DLL at the specified position -------
+NODE deleteAtPositionDLL(NODE head, int position)
+{
+
+    return head;
+}
 
 //------- Double Linked List Menu ------
 void printMenuDLL()

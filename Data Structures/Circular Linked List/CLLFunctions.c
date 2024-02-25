@@ -27,7 +27,7 @@ NODE insertAtBeginCLL(NODE head, int data)
     if (head == NULL)
     {
         head = addNode;
-        addNode -> next = addNode;
+        addNode->next = addNode;
         return head;
     }
 
@@ -53,7 +53,7 @@ NODE insertAtEndCLL(NODE head, int data)
     if (head == NULL)
     {
         head = addNode;
-        addNode -> next = addNode;
+        addNode->next = addNode;
         return head;
     }
 
@@ -69,17 +69,43 @@ NODE insertAtEndCLL(NODE head, int data)
     return head;
 }
 
+//------ Adding a node in a CLL at the specified position -------
+NODE insertAtPositionCLL(NODE head, int data, int position)
+{
+    return head;
+}
+
+//------ Deleting a node in a CLL at the beginning ------
+NODE deleteAtBeginCLL(NODE head)
+{
+
+    return head;
+}
+//------ Deleting a node in a CLL at the end -------
+NODE deleteAtEndCLL(NODE head)
+{
+
+    return head;
+}
+//------ Deleting a node in a CLL at the specified position -------
+NODE deleteAtPositionCLL(NODE head, int position)
+{
+
+    return head;
+}
+
 //------ Print the CLL ------
 void printCLL(NODE head)
 {
     NODE printNode = head;
 
-    while (printNode->next != head)
+    do
     {
         printf("%d --> ", printNode->data);
         printNode = printNode->next;
-    }
-    printf("NULL\n\n");
+    } while (printNode != head);
+
+    printf("(FIRST)\n\n");
 }
 
 //------- Circular Linked List Menu ------
