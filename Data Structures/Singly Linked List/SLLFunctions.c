@@ -91,14 +91,49 @@ NODE insertAtPosition(NODE head, int data, int position)
 //------ Deleting a node in a SLL at the beginning ------
 NODE deleteAtBegin(NODE head)
 {
-
+    if (head == NULL)
+    {
+        printf("List is empty. Cannot delete elements.\n\n");
+        return NULL;
+    }
+    if (head -> next == NULL)
+    {
+        free (head);
+        return NULL;
+    }
+    else
+    {
+        NODE deleteNode = head;
+        head = head->next;
+        free(deleteNode);
+    }
     return head;
 }
 
 //------ Deleting a node in a SLL at the end -------
 NODE deleteAtEnd(NODE head)
 {
+    NODE previous = NULL;
+    NODE deleteNode = head;
 
+    if (deleteNode == NULL)
+    {
+        printf("List is empty. Cannot delete elements.\n\n");
+        return NULL;
+    }
+    if (deleteNode -> next == NULL)
+    {
+        free (deleteNode);
+        return NULL;
+    }
+
+    while (deleteNode -> next != NULL)
+    {
+        previous = deleteNode;
+        deleteNode = deleteNode -> next;
+    }
+    previousNode -> next = NULL;
+    free (deleteNode);
     return head;
 }
 
@@ -133,7 +168,7 @@ NODE deleteAtPosition(NODE head, int position)
     }
 
     NODE deleteNode = current;
-    previous->next = current -> next;
+    previous->next = current->next;
 
     free(deleteNode);
     return head;
@@ -172,6 +207,7 @@ int main()
     NODE head = NULL;
     int userChoice = 1;
     int data = 0;
+    int position = 0;
     while (userChoice)
     {
         printMenu();
@@ -185,17 +221,18 @@ int main()
             printf("Enter input data : ");
             scanf("%d", &data);
             head = insertAtBegin(head, data);
+            printf("\n");
             break;
         case 2:
             printf("Enter input data : ");
             scanf("%d", &data);
             head = insertAtEnd(head, data);
+            printf("\n");
             break;
         case 3:
 
             printf("Enter input data : ");
             scanf("%d", &data);
-            int position = 0;
             printf("Enter position to insert data : ");
             scanf("%d", &position);
             if (position == 1)
@@ -206,15 +243,17 @@ int main()
             {
                 head = insertAtPosition(head, data, position);
             }
+            printf("\n");
             break;
         case 4:
-
+            head = deleteAtBegin(head);
             break;
         case 5:
-
+            head = deleteAtEnd(head);
             break;
         case 6:
-
+            printf("Enter position to delete data : ");
+            head = deleteAtPosition(head, position);
             break;
         case 7:
             if (head == NULL)
