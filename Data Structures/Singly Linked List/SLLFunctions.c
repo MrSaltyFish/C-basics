@@ -254,19 +254,11 @@ int main()
             scanf("%d", &position);
             if (position == 1)
             {
-<<<<<<< HEAD
                 head = deleteAtBeginSLL(head);
             }
             else
             {
                 head = deleteAtPositionSLL(head, position);
-=======
-                head = deleteAtBegin(head);
-            }
-            else
-            {
-                head = deleteAtPosition(head, position);
->>>>>>> main
             }
             break;
         case 7:
