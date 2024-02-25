@@ -96,9 +96,9 @@ NODE deleteAtBegin(NODE head)
         printf("List is empty. Cannot delete elements.\n\n");
         return NULL;
     }
-    if (head -> next == NULL)
+    if (head->next == NULL)
     {
-        free (head);
+        free(head);
         return NULL;
     }
     else
@@ -121,19 +121,19 @@ NODE deleteAtEnd(NODE head)
         printf("List is empty. Cannot delete elements.\n\n");
         return NULL;
     }
-    if (deleteNode -> next == NULL)
+    if (deleteNode->next == NULL)
     {
-        free (deleteNode);
+        free(deleteNode);
         return NULL;
     }
 
-    while (deleteNode -> next != NULL)
+    while (deleteNode->next != NULL)
     {
         previous = deleteNode;
-        deleteNode = deleteNode -> next;
+        deleteNode = deleteNode->next;
     }
-    previousNode -> next = NULL;
-    free (deleteNode);
+    previous->next = NULL;
+    free(deleteNode);
     return head;
 }
 
@@ -167,10 +167,8 @@ NODE deleteAtPosition(NODE head, int position)
         }
     }
 
-    NODE deleteNode = current;
     previous->next = current->next;
-
-    free(deleteNode);
+    free(current);
     return head;
 }
 
@@ -253,7 +251,15 @@ int main()
             break;
         case 6:
             printf("Enter position to delete data : ");
-            head = deleteAtPosition(head, position);
+            scanf("%d", &position);
+            if (position == 1)
+            {
+                head = deleteAtBegin(head);
+            }
+            else
+            {
+                head = deleteAtPosition(head, position);
+            }
             break;
         case 7:
             if (head == NULL)
