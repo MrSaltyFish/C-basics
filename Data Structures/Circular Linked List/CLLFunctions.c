@@ -18,8 +18,69 @@ NODE createNode()
     return temp;
 }
 
-//------
+//------ Adding a node in a CLL at the beginning ------
+NODE insertAtBeginCLL(NODE head, int data)
+{
+    NODE addNode = createNode();
+    addNode->data = data;
 
+    if (head == NULL)
+    {
+        head = addNode;
+        addNode -> next = addNode;
+        return head;
+    }
+
+    NODE lastNode = head;
+    while (lastNode->next != head)
+    {
+        lastNode = lastNode->next;
+    }
+
+    addNode->next = head;
+    lastNode->next = addNode;
+    head = addNode;
+
+    return head;
+}
+
+//------ Adding a node in a CLL at the end -------
+NODE insertAtEndCLL(NODE head, int data)
+{
+    NODE addNode = createNode();
+    addNode->data = data;
+
+    if (head == NULL)
+    {
+        head = addNode;
+        addNode -> next = addNode;
+        return head;
+    }
+
+    NODE lastNode = head;
+    while (lastNode->next != head)
+    {
+        lastNode = lastNode->next;
+    }
+
+    addNode->next = head;
+    lastNode->next = addNode;
+
+    return head;
+}
+
+//------ Print the CLL ------
+void printCLL(NODE head)
+{
+    NODE printNode = head;
+
+    while (printNode->next != head)
+    {
+        printf("%d --> ", printNode->data);
+        printNode = printNode->next;
+    }
+    printf("NULL\n\n");
+}
 
 //------- Circular Linked List Menu ------
 void printMenuCLL()

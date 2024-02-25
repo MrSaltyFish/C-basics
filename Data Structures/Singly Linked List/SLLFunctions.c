@@ -50,6 +50,7 @@ NODE insertAtEndSLL(NODE head, int data)
     }
     return head;
 }
+
 //------ Adding a node in a SLL at the specified position -------
 NODE insertAtPositionSLL(NODE head, int data, int position)
 {
