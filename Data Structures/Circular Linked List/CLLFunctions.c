@@ -18,8 +18,11 @@ NODE createNode()
     return temp;
 }
 
+//------
+
+
 //------- Circular Linked List Menu ------
-void printMenu()
+void printMenuCLL()
 {
     printf("1. Add a node at the beginning of CLL");
     printf("\n2. Add a node at the end of CLL");
@@ -30,4 +33,93 @@ void printMenu()
     printf("\n7. Print the Linked List");
     printf("\n0. Exit the program");
     printf("\n\nEnter your choice : ");
+}
+
+//======= (MAIN Function) =======
+int main()
+{
+    NODE head = NULL;
+    int userChoice = 1;
+    int data = 0;
+    int position = 0;
+    while (userChoice)
+    {
+        printMenuCLL();
+        scanf("%d", &userChoice);
+        switch (userChoice)
+        {
+        case 0:
+            return 0;
+
+        case 1:
+            printf("Enter input data : ");
+            scanf("%d", &data);
+            head = insertAtBeginCLL(head, data);
+            printf("\n");
+            break;
+        case 2:
+            printf("Enter input data : ");
+            scanf("%d", &data);
+            head = insertAtEndCLL(head, data);
+            printf("\n");
+            break;
+        case 3:
+
+            printf("Enter input data : ");
+            scanf("%d", &data);
+            printf("Enter position to insert data : ");
+            scanf("%d", &position);
+            if (position == 1)
+            {
+                head = insertAtBeginCLL(head, data);
+            }
+            else
+            {
+                head = insertAtPositionCLL(head, data, position);
+            }
+            printf("\n");
+            break;
+        case 4:
+            head = deleteAtBeginCLL(head);
+            break;
+        case 5:
+            head = deleteAtEndCLL(head);
+            break;
+        case 6:
+            printf("Enter position to delete data : ");
+            scanf("%d", &position);
+            if (position == 1)
+            {
+                head = deleteAtBeginCLL(head);
+            }
+            else
+            {
+                head = deleteAtPositionCLL(head, position);
+            }
+            break;
+        case 7:
+            if (head == NULL)
+            {
+                printf("CLL is empty.\n\n");
+            }
+            else
+            {
+                printCLL(head);
+            }
+            break;
+        case 8:
+            if (head == NULL)
+            {
+                printf("CLL is empty.\n\n");
+            }
+            else
+            {
+                printCLL(head);
+            }
+        default:
+            printf("Incorrect input, please try again.\n\n");
+            break;
+        }
+    }
+    return 0;
 }

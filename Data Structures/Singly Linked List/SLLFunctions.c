@@ -12,14 +12,14 @@ typedef struct node *NODE;
 //------- Creating a node in memory and returning its pointer -------
 NODE createNode()
 {
-    NODE temp = (NODE)malloc(sizeof(struct node));
+    NODE temp = (NODE) malloc(sizeof(struct node));
     temp->data = 0;
     temp->next = NULL;
     return temp;
 }
 
 //------ Adding a node in a SLL at the beginning ------
-NODE insertAtBegin(NODE head, int data)
+NODE insertAtBeginSLL(NODE head, int data)
 {
     NODE addNode = createNode();
     addNode->data = data;
@@ -29,7 +29,7 @@ NODE insertAtBegin(NODE head, int data)
 }
 
 //------ Adding a node in a SLL at the end -------
-NODE insertAtEnd(NODE head, int data)
+NODE insertAtEndSLL(NODE head, int data)
 {
     NODE addNode = createNode();
     addNode->data = data;
@@ -51,7 +51,7 @@ NODE insertAtEnd(NODE head, int data)
     return head;
 }
 //------ Adding a node in a SLL at the specified position -------
-NODE insertAtPosition(NODE head, int data, int position)
+NODE insertAtPositionSLL(NODE head, int data, int position)
 {
     // Position cannot be 0 or less than 0.
     if (position <= 0)
@@ -89,7 +89,7 @@ NODE insertAtPosition(NODE head, int data, int position)
     return head;
 }
 //------ Deleting a node in a SLL at the beginning ------
-NODE deleteAtBegin(NODE head)
+NODE deleteAtBeginSLL(NODE head)
 {
     if (head == NULL)
     {
@@ -111,7 +111,7 @@ NODE deleteAtBegin(NODE head)
 }
 
 //------ Deleting a node in a SLL at the end -------
-NODE deleteAtEnd(NODE head)
+NODE deleteAtEndSLL(NODE head)
 {
     NODE previous = NULL;
     NODE deleteNode = head;
@@ -138,7 +138,7 @@ NODE deleteAtEnd(NODE head)
 }
 
 //------ Deleting a node in a SLL at the specified position -------
-NODE deleteAtPosition(NODE head, int position)
+NODE deleteAtPositionSLL(NODE head, int position)
 {
     // Position cannot be 0 or less than 0.
     if (position <= 0)
@@ -186,7 +186,7 @@ void printSLL(NODE head)
 }
 
 //------- Singly Linked List Menu ------
-void printMenu()
+void printMenuSLL()
 {
     printf("1. Add a node at the beginning of SLL");
     printf("\n2. Add a node at the end of SLL");
@@ -208,7 +208,7 @@ int main()
     int position = 0;
     while (userChoice)
     {
-        printMenu();
+        printMenuSLL();
         scanf("%d", &userChoice);
         switch (userChoice)
         {
@@ -218,13 +218,13 @@ int main()
         case 1:
             printf("Enter input data : ");
             scanf("%d", &data);
-            head = insertAtBegin(head, data);
+            head = insertAtBeginSLL(head, data);
             printf("\n");
             break;
         case 2:
             printf("Enter input data : ");
             scanf("%d", &data);
-            head = insertAtEnd(head, data);
+            head = insertAtEndSLL(head, data);
             printf("\n");
             break;
         case 3:
@@ -235,30 +235,30 @@ int main()
             scanf("%d", &position);
             if (position == 1)
             {
-                head = insertAtBegin(head, data);
+                head = insertAtBeginSLL(head, data);
             }
             else
             {
-                head = insertAtPosition(head, data, position);
+                head = insertAtPositionSLL(head, data, position);
             }
             printf("\n");
             break;
         case 4:
-            head = deleteAtBegin(head);
+            head = deleteAtBeginSLL(head);
             break;
         case 5:
-            head = deleteAtEnd(head);
+            head = deleteAtEndSLL(head);
             break;
         case 6:
             printf("Enter position to delete data : ");
             scanf("%d", &position);
             if (position == 1)
             {
-                head = deleteAtBegin(head);
+                head = deleteAtBeginSLL(head);
             }
             else
             {
-                head = deleteAtPosition(head, position);
+                head = deleteAtPositionSLL(head, position);
             }
             break;
         case 7:
