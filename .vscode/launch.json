@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "l:/SIT/Git/C/C/Data Structures/Circular Linked List",
-      "program": "l:/SIT/Git/C/C/Data Structures/Circular Linked List/build/Debug/outDebug",
+      "cwd": "l:/SIT/Git/C/C/PP Lab",
+      "program": "l:/SIT/Git/C/C/PP Lab/build/Debug/outDebug",
       "MIMode": "lldb",
       "miDebuggerPath": "C:/MinGW/bin",
       "setupCommands": [
