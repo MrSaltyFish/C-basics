@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 4b - 4. b) WAP to print the name, salary, and date of joining of 10 employees in a company. Use array of ob
+// 4b - 4. b) WAP to print the name, salary, and date of joining
+// of 10 employees in a company. Use array of ob
 
 #include <iostream>
 
