@@ -13,6 +13,7 @@ private:
   int imaginary;
 
 public:
+  Complex(){};
   Complex(int real, int imaginary) : real(real), imaginary(imaginary) {}
 
   Complex add(const Complex &other)
@@ -33,11 +34,8 @@ int main()
 {
   Complex number1(1, 2);
   Complex number2(3, 4);
-
   Complex result = number1.add(number2);
-
   cout << "The sum of the two complex numbers is: ";
   result.display();
-
   return 0;
 }

@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 3d - Write a program to demonstrate private and public access specifiers in C++
+// 3d - Write a program to demonstrate
+// private and public access specifiers in C++
 
 #include <iostream>
-
 using namespace std;
 
 class BankAccount
@@ -41,13 +41,9 @@ int main()
     BankAccount account;
 
     account.name = "Alice";
-
     account.deposit(100);
-
     account.withdraw(50);
-
     int balance = account.getBalance();
-
     cout << "Balance: $" << balance << endl;
 
     return 0;

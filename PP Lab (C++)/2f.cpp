@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 2f - Write a program to design KBC interface for 10 questions and display the winning
+// 2f - Write a program to design KBC interface for 10
+// questions and display the winning amount.
 
 #include <iostream>
-
 using namespace std;
 
 int main()

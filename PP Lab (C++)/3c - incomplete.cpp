@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 3c - Write a program to create a class “Shopping” and write member functions
+// 3c - Write a program to create a class “Shopping”
+// and write member functions to create a grocery list
 
 #include <iostream>
 using namespace std;

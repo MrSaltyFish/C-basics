@@ -23,7 +23,6 @@ int main()
 
     person.name = "Alice";
     person.age = 25;
-
     person.greet("Bob");
 
     return 0;

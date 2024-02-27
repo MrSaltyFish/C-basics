@@ -3,8 +3,8 @@
 // demonstrate classes and objects in C++
 
 #include <iostream>
-
 using namespace std;
+
 class Person
 {
 public:
@@ -23,8 +23,6 @@ int main()
 
     person.name = "Alice";
     person.age = 25;
-
     person.greet();
-
     return 0;
 }

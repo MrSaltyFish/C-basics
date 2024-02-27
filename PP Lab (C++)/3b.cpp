@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 3b - Write a program to calculate the area of Circle, Square, Rectangle using classes and objects.
+// 3b - Write a program to calculate the area of
+// Circle, Square, Rectangle using classes and objects.
 
 #include <iostream>
-
 using namespace std;
 
 class Shape
@@ -57,21 +57,15 @@ public:
 int main()
 {
     Circle circle(5);
-
     double circleArea = circle.area();
-
     cout << "The area of the circle is: " << circleArea << endl;
 
     Square square(10);
-
     double squareArea = square.area();
-
     cout << "The area of the square is: " << squareArea << endl;
 
     Rectangle rectangle(20, 30);
-
     double rectangleArea = rectangle.area();
-
     cout << "The area of the rectangle is: " << rectangleArea << endl;
 
     return 0;

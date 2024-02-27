@@ -3,7 +3,6 @@
 // for arithmetic operations using 'switch' case
 
 #include <iostream>
-
 using namespace std;
 
 int main()

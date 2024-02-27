@@ -4,29 +4,36 @@
 #include <iostream>
 using namespace std;
 
-class Account {
+class Account
+{
 protected:
     double balance;
 
 public:
     Account(double initialBalance) : balance(initialBalance) {}
 
-    void deposit(double amount) {
+    void deposit(double amount)
+    {
         balance += amount;
         cout << "Deposited: " << amount << " into Account" << endl;
     }
 
-    void withdraw(double amount) {
-        if (balance >= amount) {
+    void withdraw(double amount)
+    {
+        if (balance >= amount)
+        {
             balance -= amount;
             cout << "Withdrawn: " << amount << " from Account" << endl;
-        } else {
+        }
+        else
+        {
             cout << "Insufficient balance in Account" << endl;
         }
     }
 };
 
-class Programmer : public Account {
+class Programmer : public Account
+{
 private:
     string skill;
 
@@ -34,13 +41,15 @@ public:
     Programmer(double initialBalance, string skillType)
         : Account(initialBalance), skill(skillType) {}
 
-    void displayInfo() {
+    void displayInfo()
+    {
         cout << "Account Balance: " << balance << endl;
         cout << "Programming Skill: " << skill << endl;
     }
 };
 
-int main() {
+int main()
+{
     Programmer programmer(5000.0, "C++");
 
     programmer.displayInfo();
