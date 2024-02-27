@@ -8,10 +8,10 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Programming/C/Data Structures/Singly Linked List",
-      "program": "d:/Programming/C/Data Structures/Singly Linked List/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "cwd": "l:/SIT/Git/C/C/PP Lab",
+      "program": "l:/SIT/Git/C/C/PP Lab/build/Debug/outDebug",
+      "MIMode": "lldb",
+      "miDebuggerPath": "C:/MinGW/bin",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
