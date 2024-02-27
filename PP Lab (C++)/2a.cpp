@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 2a - Write a program to add two numbers given by the user in C++
+// 2a - Write a program to add two
+// numbers given by the user in C++
 
 #include <iostream>
 

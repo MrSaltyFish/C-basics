@@ -1,6 +1,6 @@
 // Anvesh Khode
 // 2e - Write a program to design a calculator
-// for arithmetic operations using switch case
+// for arithmetic operations using 'switch' case
 
 #include <iostream>
 
@@ -10,10 +10,10 @@ int main()
 {
     char op;
     float num1, num2;
-    cout << "Enter an operator (+, -, *, /): ";
-    cin >> op;
     cout << "Enter two numbers: ";
     cin >> num1 >> num2;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> op;
 
     float result;
     switch (op)

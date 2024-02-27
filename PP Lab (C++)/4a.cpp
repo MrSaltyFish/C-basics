@@ -6,7 +6,8 @@
 
 using namespace std;
 
-class Complex {
+class Complex
+{
 private:
   int real;
   int imaginary;
@@ -14,19 +15,22 @@ private:
 public:
   Complex(int real, int imaginary) : real(real), imaginary(imaginary) {}
 
-  Complex add(const Complex& other) {
+  Complex add(const Complex &other)
+  {
     Complex result;
     result.real = real + other.real;
     result.imaginary = imaginary + other.imaginary;
     return result;
   }
 
-  void display() {
+  void display()
+  {
     cout << real << " + " << imaginary << "i" << endl;
   }
 };
 
-int main() {
+int main()
+{
   Complex number1(1, 2);
   Complex number2(3, 4);
 

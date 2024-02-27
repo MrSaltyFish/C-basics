@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 2c - Write a program to print the Fibonacci series upto n terms using for loop
+// 2c - Write a program to print the Fibonacci
+// series upto 'n' terms using 'for' loop
 
 #include <iostream>
 
@@ -10,6 +11,7 @@ int main()
     cout << "Enter the number of terms: ";
     cin >> n;
     cout << "Fibonacci Series: ";
+
     for (int i = 1; i <= n; ++i)
     {
         // Prints the first two terms.
@@ -18,11 +20,14 @@ int main()
             cout << t1 << ", ";
             continue;
         }
+
         nextTerm = t1 + t2;
         t1 = t2;
         t2 = nextTerm;
+
         cout << t1 << ", ";
     }
+
     cout << nextTerm;
     return 0;
 }

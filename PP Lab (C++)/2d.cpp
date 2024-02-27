@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 2d - Write a program to find the factorial of a number using while loop.
+// 2d - Write a program to find the factorial
+// of a number using 'while' loop
 
 #include <iostream>
 

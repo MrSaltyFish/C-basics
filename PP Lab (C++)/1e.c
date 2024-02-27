@@ -20,7 +20,6 @@ int main()
         {
             printf("*");
         }
-
         printf("\n");
     }
 
@@ -35,7 +34,6 @@ int main()
         {
             printf("*");
         }
-
         printf("\n");
     }
 
