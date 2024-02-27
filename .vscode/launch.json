@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "l:/SIT/Git/C/C/PP Lab",
-      "program": "l:/SIT/Git/C/C/PP Lab/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "lldb",
       "miDebuggerPath": "C:/MinGW/bin",
       "setupCommands": [
