@@ -62,20 +62,81 @@ NODE insertAtEndDLL(NODE head, int data)
 //------ Adding a node in a DLL at the specified position -------
 NODE insertAtPositionDLL(NODE head, int data, int position)
 {
+    if (head == NULL)
+    {
+        printf("DLL is empty.\n\n");
+        return head;
+    }
 
+    NODE addNode = createNode();
+    addNode->data = data;
+    NODE previous = head;
+    NODE current = head;
+
+    for (int i = 1; i < position; i++)
+    {
+        if (current == NULL)
+        {
+            printf("No such position in DLL.");
+            return head;
+        }
+
+        previous = current;
+        current = current->next;
+    }
+
+    previous->next = addNode;
+
+    addNode->prev = previous;
+    addNode->next = current;
     return head;
 }
 
 //------ Deleting a node in a DLL at the beginning ------
 NODE deleteAtBeginDLL(NODE head)
 {
+    if (head == NULL)
+    {
+        printf("DLL is empty.\n");
+        return NULL;
+    }
 
+    if (head->next == NULL)
+    {
+        free(head);
+        return NULL;
+    }
+
+    NODE deleteNode = head;
+    head = head->next;
+
+    free(deleteNode);
     return head;
 }
 //------ Deleting a node in a DLL at the end -------
 NODE deleteAtEndDLL(NODE head)
 {
+    if (head == NULL)
+    {
+        printf("DLL is empty.\n");
+        return NULL;
+    }
 
+    if (head->next == NULL)
+    {
+        free(head);
+        return NULL;
+    }
+
+    NODE previous = head;
+    NODE current = head;
+    while (current->next != NULL)
+    {
+        previous = current;
+        current = current->next;
+    }
+    free(current);
+    previous->next = NULL;
     return head;
 }
 //------ Deleting a node in a DLL at the specified position -------
@@ -101,6 +162,7 @@ void printForwardsDLL(NODE head)
 //------ Print the DLL Backwards ------
 void printBackwardsDLL(NODE head)
 {
+    printf("NULL");
     NODE tail = head;
     while (tail->next != NULL)
     {
@@ -109,11 +171,11 @@ void printBackwardsDLL(NODE head)
 
     while (tail->prev != NULL)
     {
-        printf("%d --> ", tail->data);
+        printf(" <-- %d", tail->data);
         tail = tail->prev;
     }
-    printf("%d --> ", tail->data);
-    printf("NULL\n\n");
+    printf(" <-- %d", tail->data);
+    printf("\n");
 }
 
 //------- Double Linked List Menu ------
@@ -175,9 +237,11 @@ int main()
             break;
         case 4:
             head = deleteAtBeginDLL(head);
+            printf("\n");
             break;
         case 5:
             head = deleteAtEndDLL(head);
+            printf("\n");
             break;
         case 6:
             printf("Enter position to delete data : ");
