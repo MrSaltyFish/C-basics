@@ -12,7 +12,7 @@ typedef struct node *NODE;
 //------- Creating a node in memory and returning its pointer -------
 NODE createNode()
 {
-    NODE temp = (NODE) malloc(sizeof(struct node));
+    NODE temp = (NODE)malloc(sizeof(struct node));
     temp->data = 0;
     temp->next = NULL;
     return temp;
@@ -23,6 +23,12 @@ NODE insertAtBeginSLL(NODE head, int data)
 {
     NODE addNode = createNode();
     addNode->data = data;
+
+    if (head == NULL)
+    {
+        head = addNode;
+        return head;
+    }
     addNode->next = head;
     head = addNode;
     return head;

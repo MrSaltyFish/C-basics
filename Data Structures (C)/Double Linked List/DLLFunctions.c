@@ -23,14 +23,39 @@ NODE createNode()
 //------ Adding a node in a DLL at the beginning ------
 NODE insertAtBeginDLL(NODE head, int data)
 {
+    NODE addNode = createNode();
+    addNode->data = data;
 
+    if (head == NULL)
+    {
+        head = addNode;
+        return head;
+    }
+    addNode->next = head;
+    head->prev = addNode;
+    head = addNode;
     return head;
 }
 
 //------ Adding a node in a DLL at the end -------
 NODE insertAtEndDLL(NODE head, int data)
 {
+    NODE addNode = createNode();
+    addNode->data = data;
 
+    if (head == NULL)
+    {
+        head = addNode;
+        return head;
+    }
+
+    NODE lastNode = head;
+    while (lastNode->next != NULL)
+    {
+        lastNode = lastNode->next;
+    }
+    lastNode->next = addNode;
+    addNode->prev = lastNode;
     return head;
 }
 
@@ -58,6 +83,37 @@ NODE deleteAtPositionDLL(NODE head, int position)
 {
 
     return head;
+}
+
+//------ Print the DLL Forwards ------
+void printForwardsDLL(NODE head)
+{
+    NODE printNode = head;
+
+    while (printNode != NULL)
+    {
+        printf("%d --> ", printNode->data);
+        printNode = printNode->next;
+    }
+    printf("NULL\n\n");
+}
+
+//------ Print the DLL Backwards ------
+void printBackwardsDLL(NODE head)
+{
+    NODE tail = head;
+    while (tail->next != NULL)
+    {
+        tail = tail->next;
+    }
+
+    while (tail->prev != NULL)
+    {
+        printf("%d --> ", tail->data);
+        tail = tail->prev;
+    }
+    printf("%d --> ", tail->data);
+    printf("NULL\n\n");
 }
 
 //------- Double Linked List Menu ------
@@ -90,7 +146,6 @@ int main()
         {
         case 0:
             return 0;
-
         case 1:
             printf("Enter input data : ");
             scanf("%d", &data);
@@ -104,7 +159,6 @@ int main()
             printf("\n");
             break;
         case 3:
-
             printf("Enter input data : ");
             scanf("%d", &data);
             printf("Enter position to insert data : ");
@@ -146,6 +200,7 @@ int main()
             {
                 printForwardsDLL(head);
             }
+            break;
         case 8:
             if (head == NULL)
             {

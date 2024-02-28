@@ -72,6 +72,37 @@ NODE insertAtEndCLL(NODE head, int data)
 //------ Adding a node in a CLL at the specified position -------
 NODE insertAtPositionCLL(NODE head, int data, int position)
 {
+    if (position <= 0)
+    {
+        printf("Please enter a valid position.\n");
+        return head;
+    }
+
+    if (head == NULL)
+    {
+        printf("CLL is empty.");
+        return head;
+    }
+
+    NODE addNode = createNode();
+    addNode->data = data;
+
+    NODE current = head;
+    NODE previous = head;
+
+    for (int i = 1; i < position; i++)
+    {
+        if (current->next == head)
+        {
+            printf("Position does not exist in the CLL.\n");
+            return head;
+        }
+        previous = current;
+        current = current->next;
+    }
+    previous->next = addNode;
+    addNode->next = current;
+
     return head;
 }
 
