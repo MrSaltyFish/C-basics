@@ -97,7 +97,7 @@ NODE deleteAtBeginDLL(NODE head)
 {
     if (head == NULL)
     {
-        printf("DLL is empty.\n");
+        printf("DLL is empty.\n\n");
         return NULL;
     }
 
@@ -109,6 +109,7 @@ NODE deleteAtBeginDLL(NODE head)
 
     NODE deleteNode = head;
     head = head->next;
+    head->prev = NULL;
 
     free(deleteNode);
     return head;
@@ -139,10 +140,47 @@ NODE deleteAtEndDLL(NODE head)
     previous->next = NULL;
     return head;
 }
+
 //------ Deleting a node in a DLL at the specified position -------
 NODE deleteAtPositionDLL(NODE head, int position)
 {
+    if (position == 1)
+    {
+        free(head);
+        return NULL;
+    }
 
+    NODE deleteNode = createNode();
+    NODE previous = head;
+    NODE current = head;
+
+    for (int i = 1; i < position; i++)
+    {
+        if (current == NULL)
+        {
+            printf("No such position in DLL.\n\n");
+            return head;
+        }
+
+        previous = current;
+        current = current->next;
+    }
+    if (current == NULL)
+    {
+        printf("No such position in DLL.\n\n");
+        return head;
+    }
+    if (current->next == NULL)
+    {
+        previous->next = NULL;
+        free(current);
+    }
+    else
+    {
+        previous->next = current->next;
+        (current->next)->prev = previous;
+        free(current);
+    }
     return head;
 }
 
@@ -175,7 +213,7 @@ void printBackwardsDLL(NODE head)
         tail = tail->prev;
     }
     printf(" <-- %d", tail->data);
-    printf("\n");
+    printf("\n\n");
 }
 
 //------- Double Linked List Menu ------
@@ -244,6 +282,12 @@ int main()
             printf("\n");
             break;
         case 6:
+            if (head == NULL)
+            {
+                printf("DLL is empty.\n\n");
+                break;
+            }
+
             printf("Enter position to delete data : ");
             scanf("%d", &position);
             if (position == 1)

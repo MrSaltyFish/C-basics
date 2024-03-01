@@ -5,6 +5,7 @@
 struct node
 {
     int data;
+    struct node *prev;
     struct node *next;
 };
 typedef struct node *NODE;
@@ -14,6 +15,7 @@ NODE createNode()
 {
     NODE temp = (NODE)malloc(sizeof(struct node));
     temp->data = 0;
+    temp->prev = NULL;
     temp->next = NULL;
     return temp;
 }
