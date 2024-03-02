@@ -5,6 +5,7 @@
 struct node
 {
     int data;
+    struct node *prev;
     struct node *next;
 };
 typedef struct node *NODE;
@@ -14,11 +15,14 @@ NODE createNode()
 {
     NODE temp = (NODE)malloc(sizeof(struct node));
     temp->data = 0;
+    temp->prev = NULL;
     temp->next = NULL;
     return temp;
 }
 
 //------ Adding a node in a DCLL at the beginning ------
+
+// HAS PROBLEMS
 NODE insertAtBeginDCLL(NODE head, int data)
 {
     NODE addNode = createNode();
@@ -28,18 +32,13 @@ NODE insertAtBeginDCLL(NODE head, int data)
     {
         head = addNode;
         addNode->next = addNode;
+        addNode->prev = addNode;
         return head;
     }
 
-    NODE lastNode = head;
-    while (lastNode->next != head)
-    {
-        lastNode = lastNode->next;
-    }
-
-    addNode->next = head;
+    NODE lastNode = head->prev;
     lastNode->next = addNode;
-    head = addNode;
+    addNode->prev = lastNode;
 
     return head;
 }
@@ -54,17 +53,16 @@ NODE insertAtEndDCLL(NODE head, int data)
     {
         head = addNode;
         addNode->next = addNode;
-        return head;
+        addNode->prev = addNode;
     }
-
-    NODE lastNode = head;
-    while (lastNode->next != head)
+    else
     {
-        lastNode = lastNode->next;
+        NODE lastNode = head->prev;
+        lastNode->next = addNode;
+        addNode->prev = lastNode;
     }
-
     addNode->next = head;
-    lastNode->next = addNode;
+    head->prev = addNode;
 
     return head;
 }
@@ -94,8 +92,8 @@ NODE deleteAtPositionDCLL(NODE head, int position)
     return head;
 }
 
-//------ Print the DCLL ------
-void printDCLL(NODE head)
+//------ Print the DCLL Forwards ------
+void printForwardsDCLL(NODE head)
 {
     NODE printNode = head;
 
@@ -104,11 +102,36 @@ void printDCLL(NODE head)
         printf("%d --> ", printNode->data);
         printNode = printNode->next;
     } while (printNode != head);
-
-    printf("(FIRST)\n\n");
+    printf("HEAD\n\n");
 }
 
-//------- Circular Linked List Menu ------
+//------ Print the DCLL Backwards ------
+void printBackwardsDCLL(NODE head)
+{
+    NODE printNode = head;
+    do
+    {
+        printf("%d <-- ", printNode->data);
+        printNode = printNode->prev;
+    } while (printNode != head);
+    printf("HEAD\n\n");
+
+    // NODE tail = head;
+    // while (tail->next != head)
+    // {
+    //     tail = tail->next;
+    // }
+
+    // while (tail->prev != head)
+    // {
+    //     printf(" <-- %d", tail->data);
+    //     tail = tail->prev;
+    // }
+    // printf(" <-- %d", tail->data);
+    // printf("\n\n");
+}
+
+//------- Double Circular Linked List Menu ------
 void printMenuDCLL()
 {
     printf("1. Add a node at the beginning of DCLL");
@@ -117,7 +140,8 @@ void printMenuDCLL()
     printf("\n4. Delete a node in the beginning of DCLL");
     printf("\n5. Delete a node in the end of DCLL");
     printf("\n6. Delete a node at the specified position in DCLL");
-    printf("\n7. Print the Linked List");
+    printf("\n7. Print the DCLL in forward order");
+    printf("\n8. Print the DCLL in reverse order");
     printf("\n0. Exit the program");
     printf("\n\nEnter your choice : ");
 }
@@ -191,7 +215,7 @@ int main()
             }
             else
             {
-                printDCLL(head);
+                printForwardsDCLL(head);
             }
             break;
         case 8:
@@ -201,8 +225,10 @@ int main()
             }
             else
             {
-                printCLL(head);
+                printBackwardsDCLL(head);
             }
+            break;
+
         default:
             printf("Incorrect input, please try again.\n\n");
             break;
