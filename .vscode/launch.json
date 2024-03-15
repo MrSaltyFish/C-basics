@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "l:/Git/C/Data Structures (C)/Double Circular Linked List",
-      "program": "l:/Git/C/Data Structures (C)/Double Circular Linked List/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
