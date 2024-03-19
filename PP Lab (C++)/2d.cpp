@@ -3,21 +3,18 @@
 // of a number using 'while' loop
 
 #include <iostream>
-using namespace std;
 
-int main()
-{
+int main() {
     int number, factorial = 1;
-    cout << "Enter a number: ";
-    cin >> number;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-    while (number > 0)
-    {
+    while(number > 0) {
         factorial *= number;
         number--;
     }
 
-    cout << "The factorial of the number is: " << factorial << endl;
+    std::cout << "The factorial of the number is: " << factorial << "\n";
 
     return 0;
 }

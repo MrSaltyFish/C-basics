@@ -1,29 +1,38 @@
 // Anvesh Khode
-// 3e - Write a program to demonstrate parameterized function using class and object in C++
+// 3e - assign and print the roll number, phone number and address
+// of two student having names Sam and John
+// resp. by creating two object of the class Student.
 
 #include <iostream>
 
-using namespace std;
+class Student {
+   public:
+    std::string name;
+    int rollNo;
+    unsigned long long int phoneNumber;
+    std::string address;
 
-class Person
-{
-public:
-    string name;
-    int age;
+    Student(std::string nameStr, int rollInt, unsigned long long int phoneNum,
+            std::string addr)
+        : name(nameStr),
+          rollNo(rollInt),
+          phoneNumber(phoneNum),
+          address(addr) {}
 
-    void greet(string name)
-    {
-        cout << "Hello, " << name << ", my name is " << this->name << " and I am " << this->age << " years old." << endl;
+    void printData() {
+        std::cout << "Name: " << name << "\n";
+        std::cout << "Roll Number: " << rollNo << "\n";
+        std::cout << "Phone Number: " << phoneNumber << "\n";
+        std::cout << "Address: " << address << "\n\n";
     }
 };
 
-int main()
-{
-    Person person;
-
-    person.name = "Alice";
-    person.age = 25;
-    person.greet("Bob");
-
+int main() {
+    Student student1("Sam", 1, 9576432891,
+                     "22/1, Connaught Place, New Delhi, 110001");
+    Student student2("John", 2, 7463728190,
+                     "123, Lajpat Nagar, New Delhi, 110024");
+    student1.printData();
+    student2.printData();
     return 0;
 }

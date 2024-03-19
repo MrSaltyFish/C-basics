@@ -3,16 +3,14 @@
 // numbers given by the user in C++
 
 #include <iostream>
-using namespace std;
 
-int main()
-{
-  int num1, num2;
-  cout << "Enter two numbers: ";
-  cin >> num1 >> num2;
+int main() {
+    int num1, num2;
+    std::cout << "Enter two numbers: ";
+    std::cin >> num1 >> num2;
 
-  int sum = num1 + num2;
-  cout << "The sum of the two numbers is: " << sum << endl;
+    int sum = num1 + num2;
+    std::cout << "The sum of the two numbers is: " << sum << "\n";
 
-  return 0;
+    return 0;
 }

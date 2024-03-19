@@ -3,34 +3,19 @@
 
 #include <iostream>
 using namespace std;
-class base
-{
-public:
-    virtual void print()
-    {
-        cout << "This is Base class funtion";
-    }
-    void display()
-    {
-        cout << "This is not a virtual funtion of base class\n";
-    }
+class base {
+   public:
+    virtual void print() { cout << "This is Base class funtion"; }
+    void display() { cout << "This is not a virtual funtion of base class\n"; }
 };
 
-class derived : public base
-{
-public:
-    void print()
-    {
-        cout << "This is derived class Funtion\n";
-    }
-    void display()
-    {
-        cout << "This is not a virtual funtion of derived\n";
-    }
+class derived : public base {
+   public:
+    void print() { cout << "This is derived class Funtion\n"; }
+    void display() { cout << "This is not a virtual funtion of derived\n"; }
 };
 
-int main()
-{
+int main() {
     base *bptr;
     derived d;
     bptr = &d;

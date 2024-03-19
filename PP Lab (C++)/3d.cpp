@@ -1,50 +1,26 @@
 // Anvesh Khode
-// 3d - Write a program to demonstrate
-// private and public access specifiers in C++
+// 3d - WAP to create a class name Student with
+// a string variable name and integer variable roll no.
+// assigned the value of rollno. as 2 and that of name
+// john by creating object of the class Student.
 
 #include <iostream>
-using namespace std;
 
-class BankAccount
-{
-private:
-    int balance = 0;
+class Student {
+   public:
+    std::string name;
+    int rollNo;
 
-public:
-    string name;
+    Student(std::string str, int input1) : name(str), rollNo(input1) {}
 
-    void deposit(int amount)
-    {
-        balance += amount;
-    }
-
-    void withdraw(int amount)
-    {
-        if (balance >= amount)
-        {
-            balance -= amount;
-        }
-        else
-        {
-            cout << "Insufficient funds." << endl;
-        }
-    }
-
-    int getBalance()
-    {
-        return balance;
+    void printData() {
+        std::cout << "Name: " << name << "\n";
+        std::cout << "Roll Number: " << rollNo << "\n";
     }
 };
 
-int main()
-{
-    BankAccount account;
-
-    account.name = "Alice";
-    account.deposit(100);
-    account.withdraw(50);
-    int balance = account.getBalance();
-    cout << "Balance: $" << balance << endl;
-
+int main() {
+    Student person("John", 2);
+    person.printData();
     return 0;
 }
