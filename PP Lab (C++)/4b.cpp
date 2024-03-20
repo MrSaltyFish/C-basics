@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 4b - WAP to print the roll no.and average marks of
+// 4b - WAP to print the 'rollNo' and 'averageMarks' of
 // 8 students in three subjects each out of 100.
-// The marks  are entered by user and
-// the roll nos. are automatically assigned.
+// The 'marks' are entered by user, and the
+// 'rollNo' is automatically assigned.
 
 #include <iostream>
 
@@ -10,7 +10,7 @@ class Student {
    private:
     int rollNo;
     double marks[3];
-    double average;
+    double averageMarks;
 
    public:
     static int rollCounter;
@@ -30,12 +30,12 @@ class Student {
         for(int i = 0; i < 3; ++i) {
             sum += marks[i];
         }
-        average = sum / 3;
+        averageMarks = sum / 3;
     }
 
     void displayDetails() {
-        std::cout << "Roll No: " << rollNo << ", Average Marks: " << average
-                  << std::endl;
+        std::cout << "Roll No: " << rollNo
+                  << ", Average Marks: " << averageMarks << std::endl;
     }
 };
 

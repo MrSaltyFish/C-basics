@@ -18,6 +18,5 @@ int main() {
     }
 
     printf("The greatest number is %d\n", max);
-
     return 0;
 }

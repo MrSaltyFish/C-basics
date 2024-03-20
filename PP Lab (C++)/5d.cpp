@@ -1,8 +1,7 @@
 // Anvesh Khode
-// 5d - Create a constructor to initialise the
-// length and breadth of the rectangle and calculate
-// the area and perimeter of the rectangle
-// to display the result.
+// 5d - Create a constructor to initialize the length and breadth
+// of the rectangle and calculate the area and perimeter
+// of the rectangle to display the result.
 
 #include <iostream>
 
@@ -15,9 +14,7 @@ class Rectangle {
     Rectangle(double l, double b) : length(l), breadth(b) {}
 
     double calculateArea() const { return length * breadth; }
-
     double calculatePerimeter() const { return 2 * (length + breadth); }
-
     void displayResults() const {
         std::cout << "Rectangle with length " << length << " and breadth "
                   << breadth << ":\n";
@@ -35,8 +32,6 @@ int main() {
     std::cin >> breadth;
 
     Rectangle rect(length, breadth);
-
     rect.displayResults();
-
     return 0;
 }

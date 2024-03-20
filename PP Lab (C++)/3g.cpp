@@ -1,8 +1,8 @@
 // Anvesh Khode
 // 3g - Print the sum, difference and product of the two numbers
-// by creating a class named "complex" with seperate function
+// by creating a class 'Complex' with seperate function
 // for each operation whose real and imaginary parts are
-// entered are entered by user
+// entered are entered by user.
 
 #include <iostream>
 

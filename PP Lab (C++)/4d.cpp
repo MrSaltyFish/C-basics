@@ -1,6 +1,7 @@
 // Anvesh Khode
-// 4d - Create a class car if the car model and milage of
-// the car is given as input, find the car
+// 4d - consider a class 'Car' with attributes model and mileage.
+// Create an array of 7 'Car' objects and find the car
+// with the highest mileage along with its model.
 
 #include <iostream>
 #include <string>

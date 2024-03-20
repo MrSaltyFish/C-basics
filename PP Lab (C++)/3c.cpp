@@ -1,7 +1,7 @@
 // Anvesh Khode
-// 3c - create a class with name Shopping and calculate the
-// billing amount of the three different section
-// like grocery, electronics gadgets clothes etc
+// 3c - Create a class named 'Shopping', and calculate the
+// billing amount of three different sections in a store
+// like 'grocery', 'electronic gadgets' and 'clothes'.
 
 #include <iostream>
 
@@ -15,11 +15,8 @@ class Shopping {
     Shopping() : groceryAmount(0), electronicsAmount(0), clothesAmount(0) {}
 
     void addGrocery(double amount) { groceryAmount += amount; }
-
     void addElectronics(double amount) { electronicsAmount += amount; }
-
     void addClothes(double amount) { clothesAmount += amount; }
-
     double calculateTotal() {
         return groceryAmount + electronicsAmount + clothesAmount;
     }
@@ -41,11 +38,8 @@ int main() {
     bill.addElectronics(electronicsInput);
     bill.addClothes(clothesInput);
 
-    // Calculating total amount
     double totalAmount = bill.calculateTotal();
 
-    // Displaying total amount
     std::cout << "\nTotal Billing Amount: Rs." << totalAmount << std::endl;
-
     return 0;
 }

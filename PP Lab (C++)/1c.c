@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 1c - Write a program to print
-// factorial of a given number
+// 1c - Write a program to print the
+// factorial of a given number.
 
 #include <stdio.h>
 

@@ -1,7 +1,7 @@
 // Anvesh Khode
-// 4f - define class country with attributes name,population and area.
-// create an array of 8 Country objects and calculate the
-// population density [population by area for each country]
+// 4f - Define class 'Country' with attributes 'name', 'population' and 'area'.
+// Create an array of 8 'Country' objects and calculate the
+// population density [population by area for each country].
 
 #include <iostream>
 #include <string>

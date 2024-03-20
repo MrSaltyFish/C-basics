@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 3b - Write a program to calculate the area of
-// Circle, Square, Rectangle using classes and objects.
+// 3b - WAP to calculate the area of Circle, Square,
+// Rectangle using Classes and objects.
 
 #include <iostream>
 

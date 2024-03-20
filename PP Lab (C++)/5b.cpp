@@ -1,7 +1,7 @@
 // Anvesh Khode
-// 5b - Create a constructor employee and display the details of
-// 5 employee that is the name of the employee,salary,date of joinig,
-// email id ,phone no.the constructor shouldbe use for
+// 5b - Create a constructor for the class 'Employee' and display the details of
+// 5 Employee objects that is the name of the 'employee' , 'salary', 'date of
+// joining', 'email id', and 'phone number'. The constructor should be used to
 // initialise details of the employee.
 
 #include <iostream>
@@ -32,7 +32,6 @@ class Employee {
 
 int main() {
     Employee employees[5];
-
     employees[0] = Employee("Alice", 12345, 10000, "2023-10-01");
     employees[1] = Employee("Bob", 54321, 20000, "2023-10-02");
     employees[2] = Employee("Charlie", 98765, 30000, "2023-10-03");

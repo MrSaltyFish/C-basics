@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 1b - Write a program to find the
-// even numbers between 0 and 100
+// 1b - WAP to print even numbers between 0 to 100
+// and also print the count of the even numbers.
 
 #include <stdio.h>
 
@@ -11,7 +11,7 @@ int main() {
             printf("%d ", i);
             count++;
         }
-        if(count % 10 == 0) {
+        if(count % 13 == 0) {
             printf("\n");
         }
     }

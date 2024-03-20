@@ -1,5 +1,6 @@
 // Anvesh Khode
-// 10e - WAP to add members of two different classes using friend function.
+// 10e - WAP in C++ using friend class to find the sum of
+// two private members of two different classes.
 
 #include <iostream>
 using namespace std;
@@ -14,7 +15,6 @@ class Test1 {
    public:
     Test1() : m(2) {}
 };
-
 class Test2 {
    private:
     int n;

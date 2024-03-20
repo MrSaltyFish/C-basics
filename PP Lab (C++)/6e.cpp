@@ -1,38 +1,52 @@
 // Anvesh Khode
-// 6e - WAP to implement copy constructor in C++
+// 6e - WAP for addition of two complex numbers
+// using copy constructor.
 
 #include <iostream>
 
-using namespace std;
-
 class Complex {
-private:
-  int real;
-  int imaginary;
+   private:
+    double real;
+    double imaginary;
 
-public:
-  Complex(int real, int imaginary) : real(real), imaginary(imaginary) {}
+   public:
+    Complex(int real, int imaginary) : real(real), imaginary(imaginary) {}
 
-  Complex add(const Complex& other) {
-    Complex result;
-    result.real = real + other.real;
-    result.imaginary = imaginary + other.imaginary;
-    return result;
-  }
+    Complex(const Complex& other)
+        : real(other.real), imaginary(other.imaginary) {}
 
-  void display() {
-    cout << real << " + " << imaginary << "i" << endl;
-  }
+    Complex add(const Complex& other) {
+        Complex result(0, 0);
+        result.real = real + other.real;
+        result.imaginary = imaginary + other.imaginary;
+        return result;
+    }
+
+    void display() {
+        std::cout << real << " + " << imaginary << "i"
+                  << "\n";
+    }
 };
 
 int main() {
-  Complex number1(1, 2);
-  Complex number2(3, 4);
+    double realPart, imaginaryPart;
 
-  Complex result = number1.add(number2);
+    std::cout << "Enter real part of the complex number 1: ";
+    std::cin >> realPart;
+    std::cout << "Enter imaginary part of the complex number 1: ";
+    std::cin >> imaginaryPart;
+    Complex number1(realPart, imaginaryPart);
 
-  cout << "The sum of the two complex numbers is: ";
-  result.display();
+    std::cout << "Enter real part of the complex number 2: ";
+    std::cin >> realPart;
+    std::cout << "Enter imaginary part of the complex number 2: ";
+    std::cin >> imaginaryPart;
+    Complex number2(realPart, imaginaryPart);
 
-  return 0;
+    Complex number2Copy(number2);
+    Complex result = number1.add(number2Copy);
+
+    std::cout << "The sum of the two complex numbers is: ";
+    result.display();
+    return 0;
 }

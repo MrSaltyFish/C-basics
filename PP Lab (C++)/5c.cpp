@@ -1,6 +1,6 @@
 // Anvesh Khode
 // 5c - WAP to convert the temperature from fahrenheit to celsius using
-// constructor take the value of temperture in fahrenheit from the user
+// constructor take the value of temperature in fahrenheit from the user
 // and display the converted temperature within another function
 
 #include <iostream>
@@ -23,7 +23,6 @@ class TemperatureConverter {
 
 int main() {
     double fahrenheitInput;
-
     std::cout << "Enter temperature in Fahrenheit: ";
     std::cin >> fahrenheitInput;
 

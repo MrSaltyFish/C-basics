@@ -1,6 +1,6 @@
 // Anvesh Khode
 // 2b - Write a program to check whether a
-// 3-digit number is palindrome or not (use 'while' loop)
+// 3-digit number is palindrome or not. (use 'while' loop)
 
 #include <iostream>
 

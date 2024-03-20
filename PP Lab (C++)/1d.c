@@ -1,6 +1,6 @@
 // Anvesh Khode
 // 1d - WAP to print the marksheet of a student if
-// the marks in 5 subject are given as input as a user.
+// the marks in 5 subject are given as input by the user.
 
 #include <stdio.h>
 
@@ -33,11 +33,3 @@ int main() {
     printf("\nThe Grade is: %c\n", grade);
     return 0;
 }
-
-/*
-
-// Create a star staircase of 5 rows
-// by using the concept of nested loops.
-
-
-*/

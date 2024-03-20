@@ -1,39 +1,34 @@
 // Anvesh
-// 6d - WAP in C++ for addition of two complex
-// numbers using parametrized constructor
-
+// 6d - Define a copy constructor for 'Car' class that performs
+// the copy of the data members 'brand' and 'yrs'.
 #include <iostream>
+#include <string>
 
-using namespace std;
+class Car {
+   private:
+    std::string brand;
+    int yrs;
 
-class Complex {
-private:
-  int real;
-  int imaginary;
+   public:
+    Car(std::string b, int y) : brand(b), yrs(y) {}
 
-public:
-  Complex(int real, int imaginary) : real(real), imaginary(imaginary) {}
+    Car(const Car& other) {
+        brand = other.brand;
+        yrs = other.yrs;
+    }
 
-  Complex add(const Complex& other) {
-    Complex result;
-    result.real = real + other.real;
-    result.imaginary = imaginary + other.imaginary;
-    return result;
-  }
-
-  void display() {
-    cout << real << " + " << imaginary << "i" << endl;
-  }
+    void displayDetails() const {
+        std::cout << "Brand: " << brand << ", Years: " << yrs << std::endl;
+    }
 };
 
 int main() {
-  Complex number1(1, 2);
-  Complex number2(3, 4);
+    Car car1("Toyota", 5);
+    Car car2 = car1;
 
-  Complex result = number1.add(number2);
-
-  cout << "The sum of the two complex numbers is: ";
-  result.display();
-
-  return 0;
+    std::cout << "Details of Car 1:\n";
+    car1.displayDetails();
+    std::cout << "Details of Car 2 (copied from Car 1):\n";
+    car2.displayDetails();
+    return 0;
 }

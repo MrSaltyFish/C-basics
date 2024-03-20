@@ -1,5 +1,5 @@
 // Anvesh Khode
-// 1e - WAP in c to print the following patterns-
+// 1e - WAP in C to print the following patterns-
 // 3.
 //  a
 //  a b

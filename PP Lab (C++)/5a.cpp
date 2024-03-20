@@ -1,6 +1,5 @@
 // Anvesh Khode
-// 5a - Write a program in C++ to implement
-// the use of constructor.
+// 5a - WAP in C++ to implement the use of a constructor.
 
 #include <iostream>
 

@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 4a - WAP to print the name, salary, and date of joining
-// of 10 employees in a company using array of objects
+// 4a - WAP to print the 'name', 'salary', and 'date of joining'
+// of 10 employees in a company using array of objects.
 
 #include <iostream>
 
@@ -25,10 +25,8 @@ int main() {
     for(int i = 0; i < 10; i++) {
         cout << "Enter the name of employee " << i + 1 << ": ";
         cin >> employees[i].name;
-
         cout << "Enter the salary of employee " << i + 1 << ": ";
         cin >> employees[i].salary;
-
         cout << "Enter the date of joining of employee " << i + 1 << ": ";
         cin >> employees[i].dateOfJoining;
     }

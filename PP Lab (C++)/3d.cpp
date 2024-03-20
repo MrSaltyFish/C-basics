@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 3d - WAP to create a class name Student with
-// a string variable name and integer variable roll no.
-// assigned the value of rollno. as 2 and that of name
-// john by creating object of the class Student.
+// 3d - WAP to create a class name 'Student' with
+// a string 'name' and integer 'rollNo'.
+// Assign the value of 'rollNo' as 2 and that of 'name'
+// John by creating an object of the class 'Student'.
 
 #include <iostream>
 

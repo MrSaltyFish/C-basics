@@ -1,39 +1,39 @@
 // Anvesh Khode
-// 6b - 6. b) Create a class Book with the following attributes
-// title, author and year of publication
+// 6b - For class 'Person' with the following attributes - 'name', 'age' and
+// 'occupation', implement a parametrized constructor that takes the value from
+// all three attributes and initializes them.
+// Create 3 objects of 'Person' and display their values/attributes.
 
 #include <iostream>
+#include <string>
 
-using namespace std;
+class Person {
+   private:
+    std::string name;
+    int age;
+    std::string occupation;
 
-class Book {
-private:
-  string title;
-  string author;
-  int yearOfPublication;
+   public:
+    Person(std::string n, int a, std::string occ)
+        : name(n), age(a), occupation(occ) {}
 
-public:
-  Book(string title, string author, int yearOfPublication) : title(title), author(author), yearOfPublication(yearOfPublication) {}
-
-  void displayDetails() {
-    cout << "Title: " << title << endl;
-    cout << "Author: " << author << endl;
-    cout << "Year of publication: " << yearOfPublication << endl;
-  }
+    void displayDetails() const {
+        std::cout << "Name: " << name << "\n";
+        std::cout << "Age: " << age << "\n";
+        std::cout << "Occupation: " << occupation << "\n\n";
+    }
 };
 
 int main() {
-  Book books[5];
+    Person person1("John Doe", 30, "Engineer");
+    Person person2("Alice Smith", 25, "Doctor");
+    Person person3("Bob Johnson", 40, "Teacher");
 
-  books[0] = Book("The Lord of the Rings", "J. R. R. Tolkien", 1954);
-  books[1] = Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 1979);
-  books[2] = Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997);
-  books[3] = Book("To Kill a Mockingbird", "Harper Lee", 1960);
-  books[4] = Book("Pride and Prejudice", "Jane Austen", 1813);
-
-  for (int i = 0; i < 5; i++) {
-    books[i].displayDetails();
-  }
-
-  return 0;
+    std::cout << "Details of Person 1:\n";
+    person1.displayDetails();
+    std::cout << "Details of Person 2:\n";
+    person2.displayDetails();
+    std::cout << "Details of Person 3:\n";
+    person3.displayDetails();
+    return 0;
 }

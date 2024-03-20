@@ -1,24 +1,26 @@
 // Anvesh Khode
-// 10b - WAP to implement static functions.
+// 10b - Write a program to create inline functions for the arithmetic
+// operations within the class definition. The function definition must be
+// outside the class definition.
 
 #include <iostream>
 using namespace std;
-class box {
-   private:
-    static int l, b, h;
 
+class example {
    public:
-    static void print() {
-        cout << "the value of l = " << l << "\nthe value of b= " << b
-             << "\nthe value of h= " << h;
-    }
+    int add(int a, int b);
+    int sub(int a, int b);
 };
-int box::l = 10;
-int box::b = 20;
-int box::h = 30;
+inline int example::add(int a, int b) {
+    int c = a + b;
+    cout << a << " + " << b << " = " << c << endl;
+}
+inline int example::sub(int a, int b) {
+    int c = a - b;
+    cout << a << " - " << b << " = " << c << endl;
+}
 int main() {
-    box b;
-    // b.print();//through object name
-    box::print();  // through class name accessing the function
-    return 0;
+    example a1;
+    a1.add(2, 3);
+    a1.sub(2, 3);
 }

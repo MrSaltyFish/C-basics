@@ -1,7 +1,7 @@
 // Anvesh Khode
-// 5f - Create a constructor college to initialize the deatils college
-// name,state,NREF and NAAC ranking and find out the college in maharastra state
-// having NAAC A++ grading
+// 5f - Create a constructor 'College' to initialize the details
+// 'college name', 'state', 'NREF' and 'NAAC' ranking, and find out
+// the college in Maharastra state having NAAC A++ ranking
 
 #include <iostream>
 #include <string>
@@ -22,12 +22,10 @@ class College {
 };
 
 int main() {
-    // Creating array to store college details
     College colleges[3] = {College("College1", "Maharashtra", 1234, "A++"),
                            College("College2", "Karnataka", 5678, "A"),
                            College("College3", "Maharashtra", 91011, "A+")};
 
-    // Finding college in Maharashtra with NAAC A++ grading
     std::cout << "Colleges in Maharashtra with NAAC A++ grading:\n";
     for(int i = 0; i < 3; ++i) {
         if(colleges[i].getState() == "Maharashtra" &&

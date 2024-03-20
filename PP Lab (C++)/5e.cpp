@@ -1,10 +1,10 @@
 // Anvesh Khode
-// 5e - Create a constructor bank to initialise
-// the saving account details of customer that is
-// customer name, account no., balance,date of opening account
-// display the details using another function
-// implement the code for 10 account details.
-// Also find the account details for least account balance details.
+// 5e - Create a constructor for the class 'Bank' to initialize
+// the saving account details of customer, i.e.
+// 'customer name', 'account no.', 'balance', 'date of opening account'.
+// 1) Implement the code for 10 account details.
+// 2) Display the details using a separate function.
+// 3) Find the account details for the account with the least balance.
 
 #include <iostream>
 #include <limits>

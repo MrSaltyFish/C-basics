@@ -1,8 +1,8 @@
 // Anvesh Khode
-// 4e - Define a class employee with
-// attributes name,department and salary.
-// Create an array of four employee objects and
-// write a function to increase the salary of
+// 4e - Define class 'Employee' with
+// attributes 'name', 'department' and 'salary'.
+// Create an array of 4 'Employee' objects and
+// write a function to increase the 'salary' of
 // each employee by 10%.
 
 #include <iostream>

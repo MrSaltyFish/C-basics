@@ -58,7 +58,6 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "ostream": "cpp",
-    "iostream": "cpp",
     "string": "cpp",
     "array": "cpp",
     "atomic": "cpp",
@@ -92,6 +91,7 @@
     "fstream": "cpp",
     "initializer_list": "cpp",
     "iosfwd": "cpp",
+    "iostream": "cpp",
     "istream": "cpp",
     "limits": "cpp",
     "new": "cpp",

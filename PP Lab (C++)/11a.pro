@@ -1,6 +1,6 @@
 /*
 Anvesh Khode
-11a - WAP in prolog to perform operations
+11a - WAP in prolog to perform +,-,/and * operations
 of two numbers take the nos input from the user.
 */
 

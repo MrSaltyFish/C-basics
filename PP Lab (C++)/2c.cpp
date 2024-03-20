@@ -1,6 +1,6 @@
 // Anvesh Khode
 // 2c - Write a program to print the Fibonacci
-// series upto 'n' terms (using 'for' loop)
+// series upto 'n' terms. (using 'for' loop)
 
 #include <iostream>
 
@@ -11,7 +11,6 @@ int main() {
     std::cout << "Fibonacci Series: ";
 
     for(int i = 1; i <= n; ++i) {
-        // Prints the first two terms.
         if(i == 1) {
             std::cout << t1 << ", ";
             continue;

@@ -1,6 +1,5 @@
 // Anvesh Khode
-// 3a - Write a program to
-// demonstrate classes and objects in C++
+// 3a - WAP to demonstrate classes and objects in C++
 
 #include <iostream>
 

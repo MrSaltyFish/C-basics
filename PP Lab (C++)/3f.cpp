@@ -1,7 +1,7 @@
 // Anvesh Khode
-// 3e - WAP that would print the information
-// name,year of joining,salary and address of 3 employees
-// by creating the class name employee
+// 3e - WAP that would print the information 'name',
+// 'year of joining', 'salary' and 'address' of 3 employees
+// by creating the class 'Employee'
 
 #include <iostream>
 
