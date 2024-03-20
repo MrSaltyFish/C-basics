@@ -1,46 +1,53 @@
 // Anvesh Khode
-// 4b - 4. b) WAP to print the name, salary, and date of joining
-// of 10 employees in a company. Use array of ob
+// 4b - WAP to print the roll no.and average marks of
+// 8 students in three subjects each out of 100.
+// The marks  are entered by user and
+// the roll nos. are automatically assigned.
 
 #include <iostream>
 
-using namespace std;
+class Student {
+   private:
+    int rollNo;
+    double marks[3];
+    double average;
 
-class Employee
-{
-public:
-  string name;
-  int salary;
-  string dateOfJoining;
+   public:
+    static int rollCounter;
 
-  void print()
-  {
-    cout << "Name: " << name << endl;
-    cout << "Salary: $" << salary << endl;
-    cout << "Date of joining: " << dateOfJoining << endl;
-  }
+    Student() {
+        rollNo = ++rollCounter;
+        for(int i = 0; i < 3; ++i) {
+            std::cout << "Enter marks for subject " << i + 1 << " for student "
+                      << rollNo << ": ";
+            std::cin >> marks[i];
+        }
+        calculateAverage();
+    }
+
+    void calculateAverage() {
+        double sum = 0;
+        for(int i = 0; i < 3; ++i) {
+            sum += marks[i];
+        }
+        average = sum / 3;
+    }
+
+    void displayDetails() {
+        std::cout << "Roll No: " << rollNo << ", Average Marks: " << average
+                  << std::endl;
+    }
 };
 
-int main()
-{
-  Employee employees[10];
+int Student::rollCounter = 0;
 
-  for (int i = 0; i < 10; i++)
-  {
-    cout << "Enter the name of employee " << i + 1 << ": ";
-    cin >> employees[i].name;
+int main() {
+    const int numStudents = 8;
+    Student students[numStudents];
+    std::cout << "\n";
+    for(int i = 0; i < numStudents; ++i) {
+        students[i].displayDetails();
+    }
 
-    cout << "Enter the salary of employee " << i + 1 << ": ";
-    cin >> employees[i].salary;
-
-    cout << "Enter the date of joining of employee " << i + 1 << ": ";
-    cin >> employees[i].dateOfJoining;
-  }
-
-  for (int i = 0; i < 10; i++)
-  {
-    employees[i].print();
-  }
-
-  return 0;
+    return 0;
 }

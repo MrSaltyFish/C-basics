@@ -1,45 +1,47 @@
 // Anvesh Khode
-// 5b - Create a class employee, use the constructor to
-// initialize the details of employee
+// 5b - Create a constructor employee and display the details of
+// 5 employee that is the name of the employee,salary,date of joinig,
+// email id ,phone no.the constructor shouldbe use for
+// initialise details of the employee.
 
 #include <iostream>
 
 using namespace std;
 
 class Employee {
-public:
-  string name;
-  int id;
-  int salary;
-  string dateOfJoining;
+   public:
+    string name;
+    int id;
+    int salary;
+    string dateOfJoining;
 
-  Employee(string name, int id, int salary, string dateOfJoining) {
-    this->name = name;
-    this->id = id;
-    this->salary = salary;
-    this->dateOfJoining = dateOfJoining;
-  }
+    Employee(string name, int id, int salary, string dateOfJoining) {
+        this->name = name;
+        this->id = id;
+        this->salary = salary;
+        this->dateOfJoining = dateOfJoining;
+    }
 
-  void displayDetails() {
-    cout << "Name: " << name << endl;
-    cout << "ID: " << id << endl;
-    cout << "Salary: " << salary << endl;
-    cout << "Date of joining: " << dateOfJoining << endl;
-  }
+    void displayDetails() {
+        cout << "Name: " << name << endl;
+        cout << "ID: " << id << endl;
+        cout << "Salary: " << salary << endl;
+        cout << "Date of joining: " << dateOfJoining << endl;
+    }
 };
 
 int main() {
-  Employee employees[5];
+    Employee employees[5];
 
-  employees[0] = Employee("Alice", 12345, 10000, "2023-10-01");
-  employees[1] = Employee("Bob", 54321, 20000, "2023-10-02");
-  employees[2] = Employee("Charlie", 98765, 30000, "2023-10-03");
-  employees[3] = Employee("Daisy", 67543, 40000, "2023-10-04");
-  employees[4] = Employee("Eve", 34567, 50000, "2023-10-05");
+    employees[0] = Employee("Alice", 12345, 10000, "2023-10-01");
+    employees[1] = Employee("Bob", 54321, 20000, "2023-10-02");
+    employees[2] = Employee("Charlie", 98765, 30000, "2023-10-03");
+    employees[3] = Employee("Daisy", 67543, 40000, "2023-10-04");
+    employees[4] = Employee("Eve", 34567, 50000, "2023-10-05");
 
-  for (int i = 0; i < 5; i++) {
-    employees[i].displayDetails();
-  }
+    for(int i = 0; i < 9; i++) {
+        employees[i].displayDetails();
+    }
 
-  return 0;
+    return 0;
 }

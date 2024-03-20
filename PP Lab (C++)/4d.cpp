@@ -3,39 +3,38 @@
 // the car is given as input, find the car
 
 #include <iostream>
+#include <string>
 
-using namespace std;
+class Car {
+   private:
+    std::string model;
+    double mileage;
 
-class Employee {
-public:
-  string name;
-  int salary;
-  string dateOfJoining;
+   public:
+    Car(std::string model, double mileage) : model(model), mileage(mileage) {}
 
-  void print() {
-    cout << "Name: " << name << endl;
-    cout << "Salary: $" << salary << endl;
-    cout << "Date of joining: " << dateOfJoining << endl;
-  }
+    std::string getModel() const { return model; }
+    double getMileage() const { return mileage; }
 };
 
 int main() {
-  Employee employees[10];
+    Car cars[7] = {Car("Toyota", 20.5),    Car("Honda", 18.2),
+                   Car("Ford", 22.3),      Car("Chevrolet", 19.8),
+                   Car("Hyundai", 21.7),   Car("Nissan", 20.9),
+                   Car("Volkswagen", 23.1)};
 
-  for (int i = 0; i < 10; i++) {
-    cout << "Enter the name of employee " << i + 1 << ": ";
-    cin >> employees[i].name;
+    double maxMileage = cars[0].getMileage();
+    std::string maxMileageModel = cars[0].getModel();
 
-    cout << "Enter the salary of employee " << i + 1 << ": ";
-    cin >> employees[i].salary;
+    for(int i = 1; i < 7; ++i) {
+        if(cars[i].getMileage() > maxMileage) {
+            maxMileage = cars[i].getMileage();
+            maxMileageModel = cars[i].getModel();
+        }
+    }
 
-    cout << "Enter the date of joining of employee " << i + 1 << ": ";
-    cin >> employees[i].dateOfJoining;
-  }
-
-  for (int i = 0; i < 10; i++) {
-    employees[i].print();
-  }
-
-  return 0;
+    std::cout << "Car with the highest mileage: " << maxMileageModel << " ("
+              << maxMileage << " kmpl)"
+              << "\n";
+    return 0;
 }

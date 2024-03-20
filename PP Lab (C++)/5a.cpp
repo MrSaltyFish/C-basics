@@ -7,24 +7,23 @@
 using namespace std;
 
 class Person {
-public:
-  string name;
-  int age;
+   public:
+    string name;
+    int age;
 
-  Person(string name, int age) {
-    this->name = name;
-    this->age = age;
-  }
+    Person(string name, int age) {
+        this->name = name;
+        this->age = age;
+    }
 
-  void greet() {
-    cout << "Hello, my name is " << name << " and I am " << age << " years old." << endl;
-  }
+    void greet() {
+        cout << "Hello, my name is " << name << " and I am " << age
+             << " years old." << endl;
+    }
 };
 
 int main() {
-  Person person("Alice", 25);
-
-  person.greet();
-
-  return 0;
+    Person person("Alice", 25);
+    person.greet();
+    return 0;
 }
