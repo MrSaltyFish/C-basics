@@ -22,7 +22,8 @@ class College {
 };
 
 int main() {
-    College colleges[3] = {College("College1", "Maharashtra", 1234, "A++"),
+    College colleges[3] = {College("Sybiosis International University",
+                                   "Maharashtra", 1234, "A++"),
                            College("College2", "Karnataka", 5678, "A"),
                            College("College3", "Maharashtra", 91011, "A+")};
 

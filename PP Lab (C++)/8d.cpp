@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 8d - 8 d write a program to overload the unary decreament operator as both
-// prefix and postfix
+// 8d – WAP to overload the unary decrement
+// operator as both prefix and postfix
 
 #include <iostream>
 

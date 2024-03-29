@@ -1,35 +1,19 @@
 // Anvesh Khode
-// 2e - Write a program to design a calculator
-// for arithmetic operations (use 'switch' case)
+// 2d - Write a program to find the factorial
+// of a number. (use 'while' loop)
 
 #include <iostream>
 
 int main() {
-    char op;
-    float num1, num2;
-    std::cout << "Enter two numbers: ";
-    std::cin >> num1 >> num2;
-    std::cout << "Enter an operator (+, -, *, /): ";
-    std::cin >> op;
+    int number, factorial = 1;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
 
-    float result;
-    switch(op) {
-        case '+':
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;
-            break;
-        case '/':
-            result = num1 / num2;
-            break;
-        default:
-            std::cout << "Invalid operator";
-            return 1;
+    while(number > 0) {
+        factorial *= number;
+        number--;
     }
-    std::cout << "The result is: " << result << std::endl;
+
+    std::cout << "The factorial of the number is: " << factorial << "\n";
     return 0;
 }

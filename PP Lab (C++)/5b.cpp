@@ -31,14 +31,14 @@ class Employee {
 };
 
 int main() {
-    Employee employees[5];
-    employees[0] = Employee("Alice", 12345, 10000, "2023-10-01");
-    employees[1] = Employee("Bob", 54321, 20000, "2023-10-02");
-    employees[2] = Employee("Charlie", 98765, 30000, "2023-10-03");
-    employees[3] = Employee("Daisy", 67543, 40000, "2023-10-04");
-    employees[4] = Employee("Eve", 34567, 50000, "2023-10-05");
-
-    for(int i = 0; i < 9; i++) {
+    Employee employees[5] = {
+        Employee("Alice", 12345, 10000, "2023-10-01"),
+        Employee("Bob", 54321, 20000, "2023-10-02"),
+        Employee("Charlie", 98765, 30000, "2023-10-03"),
+        Employee("Daisy", 67543, 40000, "2023-10-04"),
+        Employee("Eve", 34567, 50000, "2023-10-05"),
+    };
+    for(int i = 0; i < 4; i++) {
         employees[i].displayDetails();
     }
 

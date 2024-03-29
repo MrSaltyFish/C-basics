@@ -1,6 +1,6 @@
 // Anvesh Khode
-// 8e - 8 e write a program to overload the unary
-// increment operator as both prefix and postfix
+// 8e - WAP to overload the unary increment
+// operator as both prefix and postfix
 
 #include <iostream>
 

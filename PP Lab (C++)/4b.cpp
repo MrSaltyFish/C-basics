@@ -18,8 +18,8 @@ class Student {
     Student() {
         rollNo = ++rollCounter;
         for(int i = 0; i < 3; ++i) {
-            std::cout << "Enter marks for subject " << i + 1 << " for student "
-                      << rollNo << ": ";
+            std::cout << "Subject " << i + 1 << " for student " << rollNo
+                      << ": ";
             std::cin >> marks[i];
         }
         calculateAverage();
@@ -43,6 +43,9 @@ int Student::rollCounter = 0;
 
 int main() {
     const int numStudents = 8;
+
+    std::cout << "Enter marks for"
+              << "\n";
     Student students[numStudents];
     std::cout << "\n";
     for(int i = 0; i < numStudents; ++i) {
