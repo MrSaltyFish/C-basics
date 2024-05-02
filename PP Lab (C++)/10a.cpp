@@ -1,23 +1,23 @@
 // Anvesh Khode
-// 10a - WAP in C++ to implement static variable.
+// 10a - WAP in C++ to implement static variable and static function.
 
 #include <iostream>
 using namespace std;
-class student
-{
-public:
+
+class Student {
+   public:
     static int total;
-    student()
-    {
-        total += 1;
+    Student() { total += 1; }
+    static void printTotal() {
+        cout << "the value of total = " << total << endl;
     }
 };
-int student::total = 0;
-int main()
-{
-    student s1;
-    cout << "no of student : " << s1.total << endl;
-    student s2;
-    cout << "no of student : " << s1.total << endl;
+int Student::total = 0;
+
+int main() {
+    Student s1;
+    Student::printTotal();
+    Student s2;
+    Student::printTotal();
     return 0;
 }

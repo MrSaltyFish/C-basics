@@ -1,56 +1,45 @@
 // Anvesh Khode
-// 8a - write a c++ program to overload binary arithematic operator(user)
+// 8a - WAP to overload binary arithematic operator(user)
 
 #include <iostream>
 
-using namespace std;
-
-class ComplexNumber {
-private:
+class Complex {
+   public:
     double real;
-    double imaginary;
+    double imag;
 
-public:
-    ComplexNumber() : real(0.0), imaginary(0.0) {}
+    Complex(double r = 0, double i = 0) : real(r), imag(i) {}
 
-    ComplexNumber(double r, double i) : real(r), imaginary(i) {}
-
-    ComplexNumber(const ComplexNumber &other) : real(other.real), imaginary(other.imaginary) {}
-
-    ComplexNumber add(const ComplexNumber &other) {
-        double newReal = real + other.real;
-        double newImaginary = imaginary + other.imaginary;
-        return ComplexNumber(newReal, newImaginary);
-    }
-
-    void display() const {
-        cout << real << " + " << imaginary << "i" << endl;
+    Complex operator+(const Complex &other) const {
+        return Complex(real + other.real, imag + other.imag);
     }
 
     void input() {
-        cout << "Enter real part: ";
-        cin >> real;
-        cout << "Enter imaginary part: ";
-        cin >> imaginary;
+        std::cout << "Enter real part: ";
+        std::cin >> real;
+        std::cout << "Enter imaginary part: ";
+        std::cin >> imag;
     }
+    void display() const { std::cout << real << " + " << imag << "i\n"; }
 };
 
 int main() {
-    ComplexNumber num1, num2;
+    Complex num1, num2;
 
-    cout << "Enter values for Complex Number 1:" << endl;
+    std::cout << "Enter values for Complex Number 1:"
+              << "\n";
     num1.input();
-
-    cout << "Enter values for Complex Number 2:" << endl;
+    std::cout << "Enter values for Complex Number 2:"
+              << "\n";
     num2.input();
 
-    cout << "Complex Number 1: ";
+    std::cout << "Complex Number 1: ";
     num1.display();
-    cout << "Complex Number 2: ";
+    std::cout << "Complex Number 2: ";
     num2.display();
 
-    ComplexNumber sum = num1.add(num2);
-    cout << "Sum of Complex Numbers: ";
+    Complex sum = num1 + num2;
+    std::cout << "Sum of Complex Numbers: ";
     sum.display();
 
     return 0;

@@ -1,31 +1,40 @@
 // Anvesh Khode
-// 6a - 6. a) Create a parameterized constructor addition
-// to perform the addition of three float
+// 6a - Create a parametrized constructor for the class 'Book' having
+// initialized the book details such as 'book title', 'author name' and
+// 'publication year'. Display the details of 5 such books.
 
 #include <iostream>
+#include <string>
 
-using namespace std;
+class Book {
+   private:
+    std::string title;
+    std::string author;
+    int publicationYear;
 
-class Addition {
-private:
-  float a;
-  float b;
-  float c;
+   public:
+    Book(std::string t, std::string a, int year)
+        : title(t), author(a), publicationYear(year) {}
 
-public:
-  Addition(float a, float b, float c) : a(a), b(b), c(c) {}
-
-  float add() {
-    return a + b + c;
-  }
+    void displayDetails() const {
+        std::cout << "Title: " << title << std::endl;
+        std::cout << "Author: " << author << std::endl;
+        std::cout << "Publication Year: " << publicationYear << std::endl
+                  << std::endl;
+    }
 };
 
 int main() {
-  Addition addition1(1.0f, 2.0f, 3.0f);
-  Addition addition2(4.0f, 5.0f, 6.0f);
+    Book books[5] = {Book("The Great Gatsby", "F. Scott Fitzgerald", 1925),
+                     Book("To Kill a Mockingbird", "Harper Lee", 1960),
+                     Book("1984", "George Orwell", 1949),
+                     Book("Pride and Prejudice", "Jane Austen", 1813),
+                     Book("The Catcher in the Rye", "J.D. Salinger", 1951)};
 
-  cout << "Addition result for the first set of values: " << addition1.add() << endl;
-  cout << "Addition result for the second set of values: " << addition2.add() << endl;
+    std::cout << "Details of 5 Books:\n";
+    for(int i = 0; i < 5; ++i) {
+        books[i].displayDetails();
+    }
 
-  return 0;
+    return 0;
 }

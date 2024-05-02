@@ -1,72 +1,54 @@
 // Anvesh Khode
-// 3b - Write a program to calculate the area of
-// Circle, Square, Rectangle using classes and objects.
+// 3b - WAP to calculate the area of Circle, Square,
+// Rectangle using Classes and objects.
 
 #include <iostream>
-using namespace std;
 
-class Shape
-{
-public:
+class Shape {
+   public:
     virtual double area() = 0;
 };
 
-class Circle : public Shape
-{
-private:
+class Circle : public Shape {
+   private:
     double radius;
 
-public:
+   public:
     Circle(double radius) : radius(radius) {}
-
-    double area() override
-    {
-        return 3.14 * radius * radius;
-    }
+    double area() override { return 3.14 * radius * radius; }
 };
 
-class Square : public Shape
-{
-private:
+class Square : public Shape {
+   private:
     double sideLength;
 
-public:
+   public:
     Square(double sideLength) : sideLength(sideLength) {}
-
-    double area() override
-    {
-        return sideLength * sideLength;
-    }
+    double area() override { return sideLength * sideLength; }
 };
 
-class Rectangle : public Shape
-{
-private:
+class Rectangle : public Shape {
+   private:
     double length;
     double width;
 
-public:
+   public:
     Rectangle(double length, double width) : length(length), width(width) {}
-
-    double area() override
-    {
-        return length * width;
-    }
+    double area() override { return length * width; }
 };
 
-int main()
-{
+int main() {
     Circle circle(5);
     double circleArea = circle.area();
-    cout << "The area of the circle is: " << circleArea << endl;
+    std::cout << "The area of the circle is: " << circleArea << "\n";
 
     Square square(10);
     double squareArea = square.area();
-    cout << "The area of the square is: " << squareArea << endl;
+    std::cout << "The area of the square is: " << squareArea << "\n";
 
     Rectangle rectangle(20, 30);
     double rectangleArea = rectangle.area();
-    cout << "The area of the rectangle is: " << rectangleArea << endl;
+    std::cout << "The area of the rectangle is: " << rectangleArea << "\n";
 
     return 0;
 }

@@ -1,37 +1,40 @@
 // Anvesh Khode
-// 6c - Create class called Person with the following attributes
-// name, age and occupation.
+// 6c - Demonstrate the implementation of the copy constructor in C++ for the
+// 'Wall' class. Create an instance of the Wall class, initialize it with both
+// dimensions and calculate its area. Create a new object 'wall2' that is a copy
+// of the existing object 'wall1', and display the area of both walls.
 
 #include <iostream>
 
-using namespace std;
+class Wall {
+   private:
+    double length;
+    double height;
 
-class Person {
-private:
-  string name;
-  int age;
-  string occupation;
+   public:
+    Wall(double l, double h) : length(l), height(h) {}
 
-public:
-  Person(string name, int age, string occupation) : name(name), age(age), occupation(occupation) {}
+    Wall(const Wall& other) {
+        length = other.length;
+        height = other.height;
+    }
 
-  void displayDetails() {
-    cout << "Name: " << name << endl;
-    cout << "Age: " << age << endl;
-    cout << "Occupation: " << occupation << endl;
-  }
+    double calculateArea() const { return length * height; }
+
+    void displayArea() const {
+        std::cout << "Area of the wall: " << calculateArea() << " square units"
+                  << std::endl;
+    }
 };
 
 int main() {
-  Person persons[3];
+    Wall wall1(10.5, 8.3);
+    std::cout << "Wall 1 ";
+    wall1.displayArea();
 
-  persons[0] = Person("Alice", 25, "Software Engineer");
-  persons[1] = Person("Bob", 30, "Doctor");
-  persons[2] = Person("Charlie", 35, "Teacher");
+    Wall wall2 = wall1;
+    std::cout << "Wall 2 (copy of Wall 1) ";
+    wall2.displayArea();
 
-  for (int i = 0; i < 3; i++) {
-    persons[i].displayDetails();
-  }
-
-  return 0;
+    return 0;
 }

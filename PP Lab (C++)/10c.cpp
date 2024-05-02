@@ -1,33 +1,27 @@
 // Anvesh Khode
-// 10c - Write a program to create inline functions for the arithmetic
-// operations within the class definition. The function defitnition
-// must be outside the class definition
-
-
-
+// 10c - WAP in C++ to demonstrate virtual functions.
 
 #include <iostream>
 using namespace std;
-
-class example
-{
-public:
-    int add(int a, int b);
-    int sub(int a, int b);
+class Base {
+   public:
+    virtual void print() { cout << "This is Base class funtion"; }
+    void display() { cout << "This is not a virtual funtion of Base class\n"; }
 };
-inline int example::add(int a, int b)
-{
-    int c = a + b;
-    cout << a << " + " << b << " = " << c << endl;
-}
-inline int example::sub(int a, int b)
-{
-    int c = a - b;
-    cout << a << " - " << b << " = " << c << endl;
-}
-int main()
-{
-    example a1;
-    a1.add(2, 3);
-    a1.sub(2, 3);
+
+class Derived : public Base {
+   public:
+    void print() { cout << "This is Derived class Funtion\n"; }
+    void display() { cout << "This is not a virtual funtion of Derived\n"; }
+};
+
+int main() {
+    Base *bptr;
+    Derived d;
+
+    bptr = &d;
+    bptr->print();
+    bptr->display();
+
+    return 0;
 }

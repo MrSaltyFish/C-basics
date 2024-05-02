@@ -1,40 +1,35 @@
 // Anvesh Khode
 // 2e - Write a program to design a calculator
-// for arithmetic operations using 'switch' case
+// for arithmetic operations (use 'switch' case)
 
 #include <iostream>
-using namespace std;
 
-int main()
-{
+int main() {
     char op;
     float num1, num2;
-    cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
-    cout << "Enter an operator (+, -, *, /): ";
-    cin >> op;
+    std::cout << "Enter two numbers: ";
+    std::cin >> num1 >> num2;
+    std::cout << "Enter an operator (+, -, *, /): ";
+    std::cin >> op;
 
     float result;
-    switch (op)
-    {
-    case '+':
-        result = num1 + num2;
-        break;
-    case '-':
-        result = num1 - num2;
-        break;
-    case '*':
-        result = num1 * num2;
-        break;
-    case '/':
-        result = num1 / num2;
-        break;
-    default:
-        cout << "Invalid operator";
-        return 1;
+    switch(op) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            std::cout << "Invalid operator";
+            return 1;
     }
-
-    cout << "The result is: " << result << endl;
-
+    std::cout << "The result is: " << result << std::endl;
     return 0;
 }

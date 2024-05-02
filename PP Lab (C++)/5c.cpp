@@ -1,57 +1,32 @@
 // Anvesh Khode
-// 5c - Create a constructor student calculate the total marks
-// of 5 students in 5 subjects and
+// 5c - WAP to convert the temperature from fahrenheit to celsius using
+// constructor take the value of temperature in fahrenheit from the user
+// and display the converted temperature within another function
 
 #include <iostream>
 
-using namespace std;
+class TemperatureConverter {
+   private:
+    double fahrenheit;
+    double celsius;
 
-class Student {
-public:
-  string name;
-  int marks[5];
-
-  Student(string name, int marks[5]) {
-    this->name = name;
-    for (int i = 0; i < 5; i++) {
-      this->marks[i] = marks[i];
+   public:
+    TemperatureConverter(double f) : fahrenheit(f) {
+        celsius = (fahrenheit - 32) * 5 / 9;
     }
-  }
 
-  int calculateTotalMarks() {
-    int totalMarks = 0;
-    for (int i = 0; i < 5; i++) {
-      totalMarks += marks[i];
+    void displayConvertedTemperature() {
+        std::cout << "Temperature in Fahrenheit: " << fahrenheit << "F\n";
+        std::cout << "Temperature in Celsius: " << celsius << "C\n";
     }
-    return totalMarks;
-  }
 };
 
-Student findStudentWithLeastTotalMarks(Student students[5]) {
-  int leastTotalMarks = students[0].calculateTotalMarks();
-  Student studentWithLeastTotalMarks = students[0];
-  for (int i = 1; i < 5; i++) {
-    int currentTotalMarks = students[i].calculateTotalMarks();
-    if (currentTotalMarks < leastTotalMarks) {
-      leastTotalMarks = currentTotalMarks;
-      studentWithLeastTotalMarks = students[i];
-    }
-  }
-  return studentWithLeastTotalMarks;
-}
-
 int main() {
-  Student students[5];
+    double fahrenheitInput;
+    std::cout << "Enter temperature in Fahrenheit: ";
+    std::cin >> fahrenheitInput;
 
-  students[0] = Student("Alice", {90, 80, 70, 60, 50});
-  students[1] = Student("Bob", {80, 70, 60, 50, 40});
-  students[2] = Student("Charlie", {70, 60, 50, 40, 30});
-  students[3] = Student("Daisy", {60, 50, 40, 30, 20});
-  students[4] = Student("Eve", {50, 40, 30, 20, 10});
-
-  Student studentWithLeastTotalMarks = findStudentWithLeastTotalMarks(students);
-
-  cout << "The student with the least total marks is " << studentWithLeastTotalMarks.name << " with " << studentWithLeastTotalMarks.calculateTotalMarks() << " marks." << endl;
-
-  return 0;
+    TemperatureConverter converter(fahrenheitInput);
+    converter.displayConvertedTemperature();
+    return 0;
 }

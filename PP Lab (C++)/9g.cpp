@@ -1,40 +1,34 @@
 // Anvesh Khode
-// 9g - 9 g Implement hierarchical inheritance derived rectangle and triangle from the shape class compute the
+// 9g - Implement hierarchial inheritance to derive Rectangle and Triangle from
+// the Shape class. Compute the area of Triangle and Rectangle using method
+// overriders.
 
 #include <iostream>
 using namespace std;
 
 class Shape {
-public:
-    double calculateArea() {
-        return 0.0;
-    }
+   public:
+    double calculateArea() { return 0.0; }
 };
 
 class Rectangle : public Shape {
-protected:
+   protected:
     double length;
     double width;
 
-public:
+   public:
     Rectangle(double l, double w) : length(l), width(w) {}
-
-    double calculateArea() {
-        return length * width;
-    }
+    double calculateArea() { return length * width; }
 };
 
 class Triangle : public Shape {
-protected:
+   protected:
     double base;
     double height;
 
-public:
+   public:
     Triangle(double b, double h) : base(b), height(h) {}
-
-    double calculateArea() {
-        return 0.5 * base * height;
-    }
+    double calculateArea() { return 0.5 * base * height; }
 };
 
 int main() {
@@ -45,4 +39,4 @@ int main() {
     cout << "Area of Triangle: " << tri.calculateArea() << endl;
 
     return 0;
-} 
+}

@@ -1,25 +1,23 @@
 // Anvesh Khode
-// 9b - 9 b Define two classes, shape and area, and calculate the area of a shape with a given length and brea
+// 9b - 9 b Define two classes, Shape and Area, and calculate the area of a
+// shape with a given length and breadth using single inheritance.
 
 #include <iostream>
 using namespace std;
 
 class Shape {
-protected:
+   protected:
     double length;
     double breadth;
 
-public:
+   public:
     Shape(double l, double b) : length(l), breadth(b) {}
 };
 
 class Area : public Shape {
-public:
+   public:
     Area(double l, double b) : Shape(l, b) {}
-
-    double calculateArea() {
-        return length * breadth;
-    }
+    double calculateArea() { return length * breadth; }
 };
 
 int main() {
@@ -34,6 +32,5 @@ int main() {
     double area = shape.calculateArea();
 
     cout << "Area of the shape: " << area << endl;
-
     return 0;
 }

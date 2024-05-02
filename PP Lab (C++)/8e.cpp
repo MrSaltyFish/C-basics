@@ -1,21 +1,18 @@
 // Anvesh Khode
-// 8e - 8 e write a program to overload the unary
-// increment operator as both prefix and postfix
+// 8e - WAP to overload the unary increment
+// operator as both prefix and postfix
 
 #include <iostream>
 
 using namespace std;
 
 class Counter {
-private:
+   private:
     int count;
 
-public:
+   public:
     Counter() : count(1) {}
-
-    int getCount() const {
-        return count;
-    }
+    int getCount() const { return count; }
 
     friend istream& operator>>(istream& input, Counter& c) {
         input >> c.count;
@@ -27,7 +24,6 @@ public:
         result.count = ++count;
         return result;
     }
-
     Counter operator++(int) {
         Counter result(*this);
         count++;
@@ -40,14 +36,10 @@ int main() {
 
     cout << "Enter the initial value of count: ";
     cin >> myCounter;
-
     cout << "Initial Count: " << myCounter.getCount() << endl;
-
     ++myCounter;
     cout << "After Prefix Increment: " << myCounter.getCount() << endl;
-
     myCounter++;
     cout << "After Postfix Increment: " << myCounter.getCount() << endl;
-
     return 0;
 }

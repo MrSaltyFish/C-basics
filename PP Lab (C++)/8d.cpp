@@ -1,20 +1,18 @@
 // Anvesh Khode
-// 8d - 8 d write a program to overload the unary decreament operator as both prefix and postfix
+// 8d – WAP to overload the unary decrement
+// operator as both prefix and postfix
 
 #include <iostream>
 
 using namespace std;
 
 class Counter {
-private:
+   private:
     int count;
 
-public:
+   public:
     Counter() : count(1) {}
-
-    int getCount() const {
-        return count;
-    }
+    int getCount() const { return count; }
 
     friend istream& operator>>(istream& input, Counter& c) {
         input >> c.count;
@@ -26,7 +24,6 @@ public:
         result.count = --count;
         return result;
     }
-
     Counter operator--(int) {
         Counter result(*this);
         count--;
@@ -41,10 +38,8 @@ int main() {
     cin >> myCounter;
 
     cout << "Initial Count: " << myCounter.getCount() << endl;
-
     --myCounter;
     cout << "After Prefix Decrement: " << myCounter.getCount() << endl;
-
     myCounter--;
     cout << "After Postfix Decrement: " << myCounter.getCount() << endl;
 
