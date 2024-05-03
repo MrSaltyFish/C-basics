@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "l:/Git/C/Operating Systems/C (Scheduling Algorithms)",
+      "program": "l:/Git/C/Operating Systems/C (Scheduling Algorithms)/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
