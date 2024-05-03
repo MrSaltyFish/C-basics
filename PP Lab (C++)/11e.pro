@@ -10,6 +10,25 @@ factorial(N, Result) :-
     factorial(N1, SubFactorial),
     Result is N * SubFactorial.
 
+main :-
+    write('Factorial of 5: '),
+    factorial(5, Result1),
+    write(Result1), nl,
+
+    write('Factorial of 0: '),
+    factorial(0, Result2),
+    write(Result2), nl,
+
+    write('Factorial of 7: '),
+    factorial(7, Result3),
+    write(Result3), nl,
+
+    write('Factorial of 3: '),
+    factorial(3, Result4),
+    write(Result4), nl.
+
+:- initialization(main).
+
 /*
 Example queries:
 factorial(5, X).
