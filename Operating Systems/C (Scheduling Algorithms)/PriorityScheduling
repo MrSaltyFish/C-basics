@@ -8,7 +8,6 @@ struct priority_scheduling {
     int priority;          // process priority
 };
 
-
 int main() {
     int number_of_process;
     int total = 0;  // for total waiting and turnaround time
@@ -17,13 +16,13 @@ int main() {
     int position;
     float average_waiting_time;
     float average_turnaround_time;
-
+    int i, j;
+    // INPUT
     printf("Enter the total number of processes: ");
     scanf("%d", &number_of_process);
     struct priority_scheduling process[number_of_process];
 
     printf("\nEnter burst time and priority of each process:\n");
-
     for(int i = 0; i < number_of_process; i++) {
         process[i].process_name = (char)ASCII_number;
 
@@ -36,32 +35,40 @@ int main() {
         ASCII_number++;
     }
 
-    for(int i = 0; i < number_of_process; i++) {
+    // Sort Based on Priority
+    for(i = 0; i < number_of_process; i++) {
         position = i;
-
-        for(int j = i + 1; j < number_of_process; j++) {
-            if(process[j].priority > process[position].priority) {
+        for(j = i + 1; j < number_of_process; j++) {
+            if(process[j].priority > process[i].priority) {
                 position = j;
             }
+            temp_process = process[i];
+            process[i] = process[j];
+            process[j] = temp_process;
         }
-        temp_process = process[i];
-        process[i] = process[position];
-        process[position] = temp_process;
     }
 
-    process[0].waiting_time = 0;
-
-    for(int i = 1; i < number_of_process; i++) {
+    // SAME AS FCFS
+    // WAITING TIME FOR EACH PROCESS IS CALCULATED
+    for(i = 1; i < number_of_process; i++) {
         process[i].waiting_time = 0;
-        for(int j = 0; j < i; j++) {
-            process[i].waiting_time += process[j].burst_time;
+        for(j = 0; j < i; j++) {
+            process[i].waiting_time += process[i].burst_time;
         }
-        total += process[i].waiting_time;
+    }
+    // TURNAROUNDTIME FOR EACH
+    for(i = 0; i < number_of_process; i++) {
+        process[i].turn_around_time =
+            process[i].waiting_time + process[i].burst_time;
+        average_waiting_time += process[i].waiting_time;
+        average_turnaround_time += process[i].turn_around_time;
     }
 
-    average_waiting_time = (float)total / number_of_process;
-    total = 0;
+    // AVERAGES FOR EACH
+    average_waiting_time = average_waiting_time / number_of_process;
+    average_turnaround_time = average_turnaround_time / number_of_process;
 
+    // OUTPUT
     printf("\n\nProcess Name \tBurst Time \tWaiting Time \tTurnaround Time\n");
     printf("------------------------------------------------------------\n");
 

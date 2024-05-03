@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "l:/Git/C/Operating Systems/C (Scheduling Algorithms)",
-      "program": "l:/Git/C/Operating Systems/C (Scheduling Algorithms)/build/Debug/outDebug",
+      "cwd": "l:/Git/C/Fundamentals of Data Structures",
+      "program": "l:/Git/C/Fundamentals of Data Structures/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

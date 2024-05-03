@@ -37,7 +37,6 @@ int main() {
 
     for(int i = 0; i < number_of_process; i++) {
         position = i;
-
         for(int j = i + 1; j < number_of_process; j++) {
             if(process[j].priority > process[position].priority) {
                 position = j;

@@ -1,0 +1,11 @@
+fopen();
+fclose();
+fprintf();
+fscanf();
+fputc();
+fgetc();
+fseek();
+fputw();
+fgetw();
+ftell();
+rewind();
